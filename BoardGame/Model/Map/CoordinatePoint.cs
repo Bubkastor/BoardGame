@@ -12,5 +12,9 @@ namespace BoardGame.Model.Map
         {
             return HashCode.Combine(IdPlayFieldTil, IdNode);
         }
+        public override string ToString()
+        {
+            return $"Id:{IdPlayFieldTil}: Node:{IdNode}";
+        }
     }
 }

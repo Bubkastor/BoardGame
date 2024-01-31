@@ -13,6 +13,6 @@ namespace BoardGame.Model.Tiles
         public MeetType MeetType { get; set; }
         public DifficultyAreaType DifficultyAreaType { get; set; }
         public Meet Meet { get; set; }
-        public List<int> NeighborsNode { get; set; }
+        public List<double> NeighborsNode { get; set; }
     }
 }

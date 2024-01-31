@@ -27,7 +27,7 @@ namespace BoardGame.Repository
                         DifficultyAreaType = DifficultyAreaType.None,
                         MeetType = MeetType.None,
                         MonsterType = MonsterType.Creature,
-                        NeighborsNode = [ Help.TOP_RIGHT_SIDE, Help.TOP_LEFT_SIDE, Help.RIGHT_SIDE, 2, 3]
+                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE,HelpClass.TOP_RIGHT_SIDE, HelpClass.RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE,HelpClass.TOP_LEFT_SIDE_V2, 2, 3]
 
                     },
                     new NodeProp()
@@ -36,7 +36,7 @@ namespace BoardGame.Repository
                         DifficultyAreaType = DifficultyAreaType.None,
                         MeetType = MeetType.None,
                         MonsterType = MonsterType.None,
-                        NeighborsNode = [ Help.RIGHT_SIDE, Help.BOTTOM_RIGHT_SIDE, Help.BOTTOM_LEFT_SIDE, 1, 3]
+                        NeighborsNode = [ HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE,HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE_V2, 1, 3]
                     },
                     new NodeProp()
                     {
@@ -44,7 +44,7 @@ namespace BoardGame.Repository
                         DifficultyAreaType = DifficultyAreaType.Crossed,
                         MeetType = MeetType.None,
                         MonsterType = MonsterType.None,
-                        NeighborsNode = [ Help.BOTTOM_LEFT_SIDE, Help.LEFT_SIDE, Help.TOP_LEFT_SIDE, 1, 2]
+                        NeighborsNode = [ HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE,HelpClass.LEFT_SIDE_V2, HelpClass.TOP_LEFT_SIDE_V2, 1, 2]
                     }
                 }
             },
@@ -62,7 +62,7 @@ namespace BoardGame.Repository
                         DifficultyAreaType = DifficultyAreaType.None,
                         MeetType = MeetType.None,
                         MonsterType = MonsterType.Creature,
-                        NeighborsNode = [ Help.TOP_RIGHT_SIDE, Help.LEFT_SIDE, Help.TOP_LEFT_SIDE, 2, 3, 4]
+                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.TOP_LEFT_SIDE,HelpClass.TOP_LEFT_SIDE_V2, 2, 3, 4]
                     },
                     new NodeProp()
                     {
@@ -70,7 +70,7 @@ namespace BoardGame.Repository
                         DifficultyAreaType = DifficultyAreaType.None,
                         MeetType = MeetType.None,
                         MonsterType = MonsterType.None,
-                        NeighborsNode = [ Help.TOP_RIGHT_SIDE, Help.RIGHT_SIDE, 1, 3]
+                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE,HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, 1, 3]
                     },
                     new NodeProp()
                     {
@@ -83,7 +83,7 @@ namespace BoardGame.Repository
                             Name = "Эшбери-Роуд",
                             Lvl = 1
                         },
-                        NeighborsNode = [ Help.RIGHT_SIDE, Help.BOTTOM_RIGHT_SIDE, 1, 2, 4 ]
+                        NeighborsNode = [ HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 2, 4 ]
                     },
                     new NodeProp()
                     {
@@ -91,7 +91,7 @@ namespace BoardGame.Repository
                         DifficultyAreaType = DifficultyAreaType.None,
                         MeetType = MeetType.None,
                         MonsterType = MonsterType.None,
-                        NeighborsNode = [ Help.BOTTOM_RIGHT_SIDE, Help.BOTTOM_LEFT_SIDE, Help.LEFT_SIDE, 1, 3 ]
+                        NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 1, 3 ]
                     }
                 }
             }
