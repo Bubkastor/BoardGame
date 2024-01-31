@@ -11,6 +11,21 @@ namespace BoardGame.Builder
 {
     internal class BuildNodeGraph : IBuildNodeGraph
     {
+        public void AddBottomLeft((Node, Dictionary<CoordinatePoint, Node>) bottomLeft, int rootNodeId, PlayFieldTil playFieldTils)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddBottomRight((Node, Dictionary<CoordinatePoint, Node>) bottomRight, int rootNodeId, PlayFieldTil playFieldTils)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddLeft((Node, Dictionary<CoordinatePoint, Node>) right, PlayFieldTil playFieldTils)
+        {
+            throw new NotImplementedException();
+        }
+
         public void AddRight((Node, Dictionary<CoordinatePoint, Node>) left, PlayFieldTil playFieldTils)
         {
             var right = Create(playFieldTils);
@@ -59,6 +74,16 @@ namespace BoardGame.Builder
             {
                 left.Item2.TryAdd(key, right.Item2[key]);
             }
+        }
+
+        public void AddTopLeft((Node, Dictionary<CoordinatePoint, Node>) topLeft, int rootNodeId, PlayFieldTil playFieldTils)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddTopRight((Node, Dictionary<CoordinatePoint, Node>) topRight, int rootNodeId, PlayFieldTil playFieldTils)
+        {
+            throw new NotImplementedException();
         }
 
         public (Node, Dictionary<CoordinatePoint, Node>) Create(PlayFieldTil playFieldTils)
