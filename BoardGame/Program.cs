@@ -29,7 +29,6 @@ Dictionary<CoordinatePoint, bool> isAddedCoordinatePoint = new Dictionary<Coordi
 AddGraph(node.Item2, graph);
 
 
-
 viewer.Graph = graph;
 form.SuspendLayout();
 viewer.Dock = DockStyle.Fill;

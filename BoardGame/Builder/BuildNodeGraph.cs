@@ -67,8 +67,6 @@ namespace BoardGame.Builder
                 second = Create(playFieldTils);
             }
 
-            //playFieldTils.Id
-
             var nodeSideConnect = new List<Node>();
             var nodeSideConnectV2 = new List<Node>();
 
@@ -93,45 +91,45 @@ namespace BoardGame.Builder
 
             foreach (var key in second.Item2.Keys)
             {
-                var leftSideNodeConnect = second.Item2[key];
-                if (playFieldTils.Id != leftSideNodeConnect.Coordinate.IdPlayFieldTil)
+                var secondNode = second.Item2[key];
+                if (playFieldTils.Id != secondNode.Coordinate.IdPlayFieldTil)
                 {
                     continue;
                 }
                 var rever = reverSide[reverSide.Keys.First()];
 
-                if (leftSideNodeConnect.Side.Contains(rever))
+                if (secondNode.Side.Contains(rever))
                 {
                     foreach (var nodeSC in nodeSideConnect)
                     {
-                        if (!nodeSC.Neighbors.Contains(leftSideNodeConnect))
+                        if (!nodeSC.Neighbors.Contains(secondNode))
                         {
-                            nodeSC.Neighbors.Add(leftSideNodeConnect);
+                            nodeSC.Neighbors.Add(secondNode);
                         }
-                        if (!leftSideNodeConnect.Neighbors.Contains(nodeSC))
+                        if (!secondNode.Neighbors.Contains(nodeSC))
                         {
-                            leftSideNodeConnect.Neighbors.Add(nodeSC);
+                            secondNode.Neighbors.Add(nodeSC);
                         }
                     }
-                    leftSideNodeConnect.Side.RemoveAll(x => x == rever);
+                    secondNode.Side.RemoveAll(x => x == rever);
                 }
 
                 var reverV2 = reverSide[reverSide.Keys.Last()];
-                if (leftSideNodeConnect.Side.Contains(reverV2))
+                if (secondNode.Side.Contains(reverV2))
                 {
                     foreach (var nodeSCV2 in nodeSideConnectV2)
                     {
-                        if (!nodeSCV2.Neighbors.Contains(leftSideNodeConnect))
+                        if (!nodeSCV2.Neighbors.Contains(secondNode))
                         {
-                            nodeSCV2.Neighbors.Add(leftSideNodeConnect);
+                            nodeSCV2.Neighbors.Add(secondNode);
                         }
-                        if (!leftSideNodeConnect.Neighbors.Contains(nodeSCV2))
+                        if (!secondNode.Neighbors.Contains(nodeSCV2))
                         {
-                            leftSideNodeConnect.Neighbors.Add(nodeSCV2);
+                            secondNode.Neighbors.Add(nodeSCV2);
                         }
 
                     }
-                    leftSideNodeConnect.Side.RemoveAll(x => x == reverV2);
+                    secondNode.Side.RemoveAll(x => x == reverV2);
                 }
             }
 
