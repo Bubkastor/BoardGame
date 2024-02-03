@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BoardGame.Model
 {
+    /// <summary>
+    /// Встречи на тайле
+    /// </summary>
     public enum MeetType
     {
         None,

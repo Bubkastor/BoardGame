@@ -10,7 +10,7 @@ namespace BoardGame.Model.Enemy
     {
         public string Name { get; set; }
         public int Lvl { get; set; }
-        public MonsterType EnemyType { get; set; }
+        public NpcType EnemyType { get; set; }
 
         //<summary>
         // Уязвимость

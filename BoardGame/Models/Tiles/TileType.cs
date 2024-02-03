@@ -1,15 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BoardGame.Model.Tiles
+﻿namespace BoardGame.Model.Tiles
 {
+    /// <summary>
+    /// Тип тайла
+    /// </summary>
     public enum TileType
     {
+        /// <summary>
+        /// Двухстороняя
+        /// </summary>
         Start,
+
+        /// <summary>
+        /// Зеленая
+        /// </summary>
         Green,
+
+        /// <summary>
+        /// Красная
+        /// </summary>
         Red
     }
 }
