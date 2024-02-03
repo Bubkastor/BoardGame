@@ -14,7 +14,7 @@ PlayFieldTilRepository playFieldTilRepository = new PlayFieldTilRepository();
 var til = playFieldTilRepository.GetPlayFieldTilById(1);
 var til2 = playFieldTilRepository.GetPlayFieldTilById(2);
 var node = builder.Create(til);
-builder.AddRight(node, til2);
+builder.AddBottomLeft(node, 1, til2);
 
 //show View
 Form form = new Form();

@@ -11,79 +11,128 @@ namespace BoardGame.Builder
 {
     internal class BuildNodeGraph : IBuildNodeGraph
     {
-        public void AddBottomLeft((Node, Dictionary<CoordinatePoint, Node>) bottomLeft, int rootNodeId, PlayFieldTil playFieldTils)
+        public void AddBottomLeft((Node, Dictionary<CoordinatePoint, Node>) root, int idPlayFieldTil, PlayFieldTil playFieldTils)
         {
-            throw new NotImplementedException();
-        }
-
-        public void AddBottomRight((Node, Dictionary<CoordinatePoint, Node>) bottomRight, int rootNodeId, PlayFieldTil playFieldTils)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void AddLeft((Node, Dictionary<CoordinatePoint, Node>) right, PlayFieldTil playFieldTils)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void AddRight((Node, Dictionary<CoordinatePoint, Node>) left, PlayFieldTil playFieldTils)
-        {
-            var right = Create(playFieldTils);
-            var nodeWithRightSideConnectTop = new List<Node>();
-            foreach (var key in left.Item2.Keys)
+            Dictionary<double, double> reverSide = new Dictionary<double, double>()
             {
-                if (left.Item2[key].Side.Contains(HelpClass.RIGHT_SIDE))
-                {
-                    nodeWithRightSideConnectTop.Add(left.Item2[key]);
-                    left.Item2[key].Side.RemoveAll(x => x == HelpClass.RIGHT_SIDE);
-                }
-            };
-            var nodeWithRightSideConnectBottom = new List<Node>();
-            foreach (var key in left.Item2.Keys)
-            {
-                if (left.Item2[key].Side.Contains(HelpClass.RIGHT_SIDE_V2))
-                {
-                    nodeWithRightSideConnectBottom.Add(left.Item2[key]);
-                    left.Item2[key].Side.RemoveAll(x => x == HelpClass.RIGHT_SIDE_V2);
-                }
+                { HelpClass.BOTTOM_LEFT_SIDE, HelpClass.TOP_RIGHT_SIDE},
+                { HelpClass.BOTTOM_LEFT_SIDE_V2 , HelpClass.TOP_RIGHT_SIDE_V2 }
             };
 
-            foreach (var key in right.Item2.Keys)
+            Connect(root, idPlayFieldTil, playFieldTils, reverSide);
+        }
+
+        public void AddBottomRight((Node, Dictionary<CoordinatePoint, Node>) root, int idPlayFieldTil, PlayFieldTil playFieldTils)
+        {
+            Dictionary<double, double> reverSide = new Dictionary<double, double>()
             {
-                var leftSideNodeConnect = right.Item2[key];
-                if (leftSideNodeConnect.Side.Contains(HelpClass.LEFT_SIDE))
+                { HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE},
+                { HelpClass.BOTTOM_RIGHT_SIDE_V2 , HelpClass.TOP_LEFT_SIDE_V2 }
+            };
+
+            Connect(root, idPlayFieldTil, playFieldTils, reverSide);
+        }
+
+        public void AddLeft((Node, Dictionary<CoordinatePoint, Node>) root, int idPlayFieldTil, PlayFieldTil playFieldTils)
+        {
+            Dictionary<double, double> reverSide = new Dictionary<double, double>()
+            {
+                { HelpClass.LEFT_SIDE, HelpClass.RIGHT_SIDE },
+                { HelpClass.LEFT_SIDE_V2 , HelpClass.RIGHT_SIDE_V2 }
+            };
+
+            Connect(root, idPlayFieldTil, playFieldTils, reverSide);
+        }
+
+        public void AddRight((Node, Dictionary<CoordinatePoint, Node>) root, int idPlayFieldTil, PlayFieldTil playFieldTils)
+        {
+            Dictionary<double, double> reverSide = new Dictionary<double, double>()
+            {
+                { HelpClass.RIGHT_SIDE, HelpClass.LEFT_SIDE },
+                { HelpClass.RIGHT_SIDE_V2, HelpClass.LEFT_SIDE_V2 },
+            };
+
+            Connect(root, idPlayFieldTil, playFieldTils, reverSide);
+        }
+
+        private void Connect((Node, Dictionary<CoordinatePoint, Node>) root, int idPlayFieldTil, PlayFieldTil playFieldTils, Dictionary<double, double> reverSide)
+        {
+            var second = Create(playFieldTils);
+            var nodeSideConnect = new List<Node>();
+            var nodeSideConnectV2 = new List<Node>();
+
+            foreach (var key in root.Item2.Keys)
+            {
+                var item = root.Item2[key];
+                if (item.Coordinate.IdPlayFieldTil != idPlayFieldTil)
                 {
-                    leftSideNodeConnect.Neighbors.AddRange(nodeWithRightSideConnectTop);
-                    foreach(var node in nodeWithRightSideConnectTop)
-                    {
-                        node.Neighbors.Add(leftSideNodeConnect);
-                    }
-                    leftSideNodeConnect.Side.RemoveAll(x => x == HelpClass.LEFT_SIDE);
+                    continue;
                 }
-                if (leftSideNodeConnect.Side.Contains(HelpClass.LEFT_SIDE_V2))
+                if (item.Side.Contains(reverSide.Keys.First()))
                 {
-                    leftSideNodeConnect.Neighbors.AddRange(nodeWithRightSideConnectBottom);
-                    foreach (var node in nodeWithRightSideConnectBottom)
+                    nodeSideConnect.Add(item);
+                    item.Side.RemoveAll(x => x == reverSide.Keys.First());
+                }
+                if (item.Side.Contains(reverSide.Keys.Last()))
+                {
+                    nodeSideConnectV2.Add(item);
+                    item.Side.RemoveAll(x => x == reverSide.Keys.Last());
+                }
+            };
+
+            foreach (var key in second.Item2.Keys)
+            {
+                var leftSideNodeConnect = second.Item2[key];
+                var rever = reverSide[reverSide.Keys.First()];
+
+                if (leftSideNodeConnect.Side.Contains(rever))
+                {
+                    leftSideNodeConnect.Neighbors.AddRange(nodeSideConnect);
+                    foreach (var nodeSC in nodeSideConnect)
                     {
-                        node.Neighbors.Add(leftSideNodeConnect);
+                        nodeSC.Neighbors.Add(leftSideNodeConnect);
                     }
-                    leftSideNodeConnect.Side.RemoveAll(x => x == HelpClass.LEFT_SIDE_V2);
+                    leftSideNodeConnect.Side.RemoveAll(x => x == rever);
+                }
+
+                var reverV2 = reverSide[reverSide.Keys.Last()];
+                if (leftSideNodeConnect.Side.Contains(reverV2))
+                {
+                    leftSideNodeConnect.Neighbors.AddRange(nodeSideConnectV2);
+                    foreach (var nodeSCV2 in nodeSideConnectV2)
+                    {
+                        nodeSCV2.Neighbors.Add(leftSideNodeConnect);
+                    }
+                    leftSideNodeConnect.Side.RemoveAll(x => x == reverV2);
                 }
             }
-            foreach (var key in right.Item2.Keys)
+
+            foreach (var key in second.Item2.Keys)
             {
-                left.Item2.TryAdd(key, right.Item2[key]);
+                root.Item2.TryAdd(key, second.Item2[key]);
             }
         }
 
-        public void AddTopLeft((Node, Dictionary<CoordinatePoint, Node>) topLeft, int rootNodeId, PlayFieldTil playFieldTils)
+        public void AddTopLeft((Node, Dictionary<CoordinatePoint, Node>) root, int idPlayFieldTil, PlayFieldTil playFieldTils)
         {
-            throw new NotImplementedException();
+            Dictionary<double, double> reverSide = new Dictionary<double, double>()
+            {
+                { HelpClass.TOP_LEFT_SIDE , HelpClass.BOTTOM_RIGHT_SIDE},
+                { HelpClass.TOP_LEFT_SIDE_V2 , HelpClass.BOTTOM_RIGHT_SIDE_V2 }
+            };
+
+            Connect(root, idPlayFieldTil, playFieldTils, reverSide);
         }
 
-        public void AddTopRight((Node, Dictionary<CoordinatePoint, Node>) topRight, int rootNodeId, PlayFieldTil playFieldTils)
+        public void AddTopRight((Node, Dictionary<CoordinatePoint, Node>) root, int idPlayFieldTil, PlayFieldTil playFieldTils)
         {
-            throw new NotImplementedException();
+            Dictionary<double, double> reverSide = new Dictionary<double, double>()
+            {
+                { HelpClass.TOP_RIGHT_SIDE, HelpClass.BOTTOM_LEFT_SIDE},
+                { HelpClass.TOP_RIGHT_SIDE_V2 , HelpClass.BOTTOM_LEFT_SIDE_V2 }
+            };
+
+            Connect(root, idPlayFieldTil, playFieldTils, reverSide);
         }
 
         public (Node, Dictionary<CoordinatePoint, Node>) Create(PlayFieldTil playFieldTils)
