@@ -13,8 +13,11 @@ BuildNodeGraph builder = new BuildNodeGraph();
 PlayFieldTilRepository playFieldTilRepository = new PlayFieldTilRepository();
 var til = playFieldTilRepository.GetPlayFieldTilById(1);
 var til2 = playFieldTilRepository.GetPlayFieldTilById(2);
+var til3 = playFieldTilRepository.GetPlayFieldTilById(3);
 var node = builder.Create(til);
-builder.AddBottomLeft(node, 1, til2);
+builder.AddRight(node, 1, til2);
+builder.AddBottomRight(node, 1, til3);
+builder.AddBottomLeft(node, 2, til3);
 
 //show View
 Form form = new Form();

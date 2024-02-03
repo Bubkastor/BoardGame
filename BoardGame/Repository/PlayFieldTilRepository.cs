@@ -47,7 +47,7 @@ namespace BoardGame.Repository
                         NeighborsNode = [ HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE,HelpClass.LEFT_SIDE_V2, HelpClass.TOP_LEFT_SIDE_V2, 1, 2]
                     }
                 }
-            },
+            },                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
             new PlayFieldTil()
             {
                 Id = 2,
@@ -92,6 +92,53 @@ namespace BoardGame.Repository
                         MeetType = MeetType.None,
                         MonsterType = MonsterType.None,
                         NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 1, 3 ]
+                    }
+                }
+            },
+            new PlayFieldTil()
+            {
+                Id = 3,
+                NodeCount = 4,
+                Type = TileType.Green,
+                Visible = false,
+                NodeProps = new List<NodeProp>()
+                {
+                    new NodeProp()
+                    {
+                        IdNode = 1,
+                        DifficultyAreaType = DifficultyAreaType.None,
+                        MeetType = MeetType.None,
+                        MonsterType = MonsterType.None,
+                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE,HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.TOP_LEFT_SIDE, HelpClass.RIGHT_SIDE, 2 ]
+                    },
+                    new NodeProp()
+                    {
+                        IdNode = 2,
+                        DifficultyAreaType = DifficultyAreaType.None,
+                        MeetType = MeetType.None,
+                        MonsterType = MonsterType.Human,
+                        NeighborsNode = [ HelpClass.TOP_LEFT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
+                    },
+                    new NodeProp()
+                    {
+                        IdNode = 3,
+                        DifficultyAreaType = DifficultyAreaType.Radiation,
+                        MeetType = MeetType.None,
+                        MonsterType = MonsterType.None,
+                        NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 2, 4 ]
+                    },
+                    new NodeProp()
+                    {
+                        IdNode = 4,
+                        DifficultyAreaType = DifficultyAreaType.None,
+                        MeetType = MeetType.Wasteland,
+                        Meet = new Meet()
+                        {
+                            Name = "Заправка Красная ракет",
+                            Lvl = 2,
+                        },
+                        MonsterType = MonsterType.None,
+                        NeighborsNode = [ HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, 2, 3 ]
                     }
                 }
             }

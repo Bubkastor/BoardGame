@@ -57,7 +57,18 @@ namespace BoardGame.Builder
 
         private void Connect((Node, Dictionary<CoordinatePoint, Node>) root, int idPlayFieldTil, PlayFieldTil playFieldTils, Dictionary<double, double> reverSide)
         {
-            var second = Create(playFieldTils);
+            (Node, Dictionary<CoordinatePoint, Node>) second = (null, null);
+            if (root.Item2.ContainsKey(new CoordinatePoint(playFieldTils.Id, playFieldTils.NodeProps[0].IdNode)))
+            {
+                second = root;
+            }
+            else
+            {
+                second = Create(playFieldTils);
+            }
+
+            //playFieldTils.Id
+
             var nodeSideConnect = new List<Node>();
             var nodeSideConnectV2 = new List<Node>();
 
@@ -83,14 +94,24 @@ namespace BoardGame.Builder
             foreach (var key in second.Item2.Keys)
             {
                 var leftSideNodeConnect = second.Item2[key];
+                if (playFieldTils.Id != leftSideNodeConnect.Coordinate.IdPlayFieldTil)
+                {
+                    continue;
+                }
                 var rever = reverSide[reverSide.Keys.First()];
 
                 if (leftSideNodeConnect.Side.Contains(rever))
                 {
-                    leftSideNodeConnect.Neighbors.AddRange(nodeSideConnect);
                     foreach (var nodeSC in nodeSideConnect)
                     {
-                        nodeSC.Neighbors.Add(leftSideNodeConnect);
+                        if (!nodeSC.Neighbors.Contains(leftSideNodeConnect))
+                        {
+                            nodeSC.Neighbors.Add(leftSideNodeConnect);
+                        }
+                        if (!leftSideNodeConnect.Neighbors.Contains(nodeSC))
+                        {
+                            leftSideNodeConnect.Neighbors.Add(nodeSC);
+                        }
                     }
                     leftSideNodeConnect.Side.RemoveAll(x => x == rever);
                 }
@@ -98,10 +119,17 @@ namespace BoardGame.Builder
                 var reverV2 = reverSide[reverSide.Keys.Last()];
                 if (leftSideNodeConnect.Side.Contains(reverV2))
                 {
-                    leftSideNodeConnect.Neighbors.AddRange(nodeSideConnectV2);
                     foreach (var nodeSCV2 in nodeSideConnectV2)
                     {
-                        nodeSCV2.Neighbors.Add(leftSideNodeConnect);
+                        if (!nodeSCV2.Neighbors.Contains(leftSideNodeConnect))
+                        {
+                            nodeSCV2.Neighbors.Add(leftSideNodeConnect);
+                        }
+                        if (!leftSideNodeConnect.Neighbors.Contains(nodeSCV2))
+                        {
+                            leftSideNodeConnect.Neighbors.Add(nodeSCV2);
+                        }
+
                     }
                     leftSideNodeConnect.Side.RemoveAll(x => x == reverV2);
                 }
