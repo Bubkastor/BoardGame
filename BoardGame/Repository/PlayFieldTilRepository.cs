@@ -27,7 +27,7 @@ namespace BoardGame.Repository
                         DifficultyAreaType = DifficultyAreaType.None,
                         MeetType = MeetType.None,
                         MonsterType = MonsterType.Creature,
-                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE,HelpClass.TOP_RIGHT_SIDE, HelpClass.RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE,HelpClass.TOP_LEFT_SIDE_V2, 2, 3]
+                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE,HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE,HelpClass.TOP_LEFT_SIDE_V2, 2, 3]
 
                     },
                     new NodeProp()

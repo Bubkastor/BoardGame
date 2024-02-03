@@ -23,8 +23,8 @@ Graph graph = new Graph("map");
 
 Dictionary<CoordinatePoint, bool> isAddedCoordinatePoint = new Dictionary<CoordinatePoint, bool>();
 
-
 AddGraph(node.Item2, graph);
+
 
 
 viewer.Graph = graph;
@@ -38,16 +38,25 @@ form.ShowDialog();
 
 void AddGraph(Dictionary<CoordinatePoint, BoardGame.Model.Map.Node> coordNodeMap, Graph graph)
 {
+    HashSet<(string, string)> existPath = new HashSet<(string, string)>();
     foreach (var key in coordNodeMap.Keys)
     {
         var node = coordNodeMap[key];
-        if (isAddedCoordinatePoint.TryAdd(key, true))
+
+        graph.AddNode(key.ToString());
+        foreach (var neig in node.Neighbors)
         {
-            graph.AddNode(key.ToString());
-            foreach (var neig in node.Neighbors)
+            if (!existPath.Contains((key.ToString(), neig.Coordinate.ToString())))
             {
                 graph.AddEdge(key.ToString(), neig.Coordinate.ToString());
+                existPath.Add((key.ToString(), neig.Coordinate.ToString()));
+
+            }
+
+            if (!existPath.Contains((neig.Coordinate.ToString(), key.ToString())))
+            {
                 graph.AddEdge(neig.Coordinate.ToString(), key.ToString());
+                existPath.Add((neig.Coordinate.ToString(), key.ToString()));
             }
 
             if (node.DifficultyAreaType == BoardGame.Model.DifficultyAreaType.Crossed)
