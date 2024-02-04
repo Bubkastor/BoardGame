@@ -11,7 +11,6 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 1,
-                NodeCount = 3,
                 Type = TileType.Green,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -19,8 +18,6 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 1,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
                         MonsterType = NpcType.Creature,
                         NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE,HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE,HelpClass.TOP_LEFT_SIDE_V2, 2, 3]
 
@@ -28,17 +25,12 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 2,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE,HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE_V2, 1, 3]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE,HelpClass.LEFT_SIDE_V2, HelpClass.TOP_LEFT_SIDE_V2, 1, 2]
                     }
                 }
@@ -46,7 +38,6 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 2,
-                NodeCount = 4,
                 Type = TileType.Green,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -54,25 +45,18 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 1,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
                         MonsterType = NpcType.Creature,
                         NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.TOP_LEFT_SIDE,HelpClass.TOP_LEFT_SIDE_V2, 2, 3, 4]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE,HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, 1, 3]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        DifficultyAreaType = DifficultyAreaType.None,
                         MeetType = MeetType.Settlement,
-                        MonsterType = NpcType.None,
                         Meet = new Meet()
                         {
                             Name = "Эшбери-Роуд",
@@ -83,9 +67,6 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 4,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 1, 3 ]
                     }
                 }
@@ -93,7 +74,6 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 3,
-                NodeCount = 4,
                 Type = TileType.Green,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -101,16 +81,11 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 1,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE,HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.TOP_LEFT_SIDE, HelpClass.RIGHT_SIDE, 2 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
                         MonsterType = NpcType.Human,
                         NeighborsNode = [ HelpClass.TOP_LEFT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
                     },
@@ -118,21 +93,17 @@ namespace BoardGame.Repository
                     {
                         IdNode = 3,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 2, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
-                        DifficultyAreaType = DifficultyAreaType.None,
                         MeetType = MeetType.Wasteland,
                         Meet = new Meet()
                         {
                             Name = "Заправка Красная ракет",
                             Lvl = 2,
                         },
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, 2, 3 ]
                     }
                 }
@@ -140,7 +111,6 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 4,
-                NodeCount = 4,
                 Type = TileType.Green,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -148,31 +118,22 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 1,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.RIGHT_SIDE, 2, 3, 4]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2,HelpClass.BOTTOM_LEFT_SIDE_V2, 1, 3, 4]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE,HelpClass.LEFT_SIDE_V2,HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, 1, 2, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
-                        DifficultyAreaType = DifficultyAreaType.None,
                         MeetType = MeetType.Wasteland,
                         MonsterType = NpcType.Human,
                         Meet = new Meet()
@@ -187,7 +148,6 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 5,
-                NodeCount = 4,
                 Type = TileType.Green,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -195,7 +155,6 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 1,
-                        DifficultyAreaType = DifficultyAreaType.None,
                         MeetType = MeetType.Wasteland,
                         MonsterType = NpcType.Human,
                         Meet = new Meet()
@@ -208,24 +167,16 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 2,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 3]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE_V2, 1, 2, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
                         MonsterType = NpcType.Human,
                         NeighborsNode = [ HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.TOP_LEFT_SIDE_V2, 1, 3 ]
                     }
@@ -234,7 +185,6 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 6,
-                NodeCount = 3,
                 Type = TileType.Green,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -243,24 +193,20 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE,HelpClass.LEFT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, 2, 3]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
+
                         NeighborsNode = [HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 3]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        DifficultyAreaType = DifficultyAreaType.None,
+
                         MeetType = MeetType.Settlement,
-                        MonsterType = NpcType.None,
+
                          Meet = new Meet()
                         {
                             Name = "Ферма Хофмана",
@@ -273,7 +219,6 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 7,
-                NodeCount = 5,
                 Type = TileType.Green,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -282,24 +227,18 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE, 2, 3]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, 1, 3]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        DifficultyAreaType = DifficultyAreaType.None,
                         MeetType = MeetType.Wasteland,
-                        MonsterType = NpcType.None,
                         Meet = new Meet()
                         {
                             Name = "Шоссе 74",
@@ -311,16 +250,12 @@ namespace BoardGame.Repository
                     {
                         IdNode = 4,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 2, 5 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 5,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 4, 3 ]
                     },
                 },
@@ -328,7 +263,6 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 8,
-                NodeCount = 5,
                 Type = TileType.Green,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -336,8 +270,6 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 1,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
                         MonsterType = NpcType.Creature,
                         NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, 2, 3, 4, 5 ]
                     },
@@ -345,24 +277,18 @@ namespace BoardGame.Repository
                     {
                         IdNode = 2,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [HelpClass.TOP_RIGHT_SIDE,HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, 1, 3 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 2 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 1, 5 ]
                     },
                     new NodeProp()
@@ -370,7 +296,6 @@ namespace BoardGame.Repository
                         IdNode = 5,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
                         MeetType = MeetType.Vault84,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.TOP_LEFT_SIDE_V2, 1, 4 ]
                     },
                 },
@@ -378,7 +303,6 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 8, // red_1
-                NodeCount = 4,
                 Type = TileType.Red,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -387,14 +311,11 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, 2, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
-                        DifficultyAreaType = DifficultyAreaType.None,
                         MeetType = MeetType.Wasteland,
                         MonsterType = NpcType.SuperMutant,
                         NeighborsNode = [HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.RIGHT_SIDE, 1, 3, 4 ]
@@ -403,16 +324,12 @@ namespace BoardGame.Repository
                     {
                         IdNode = 3,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE_V2 , 2, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.LEFT_SIDE_V2, 1,2,3 ]
                     }
                 },
@@ -420,7 +337,6 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 9,// red_2
-                NodeCount = 4,
                 Type = TileType.Red,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -429,24 +345,17 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.TOP_LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 2, 3 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
                         MonsterType = NpcType.SuperMutant,
                         NeighborsNode = [HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 1, 3 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, 1, 2, 4 ]
                     },
                     new NodeProp()
@@ -454,7 +363,6 @@ namespace BoardGame.Repository
                         IdNode = 4,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
                         MeetType = MeetType.Vault109,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ 3 ]
                     }
                 },
@@ -462,7 +370,6 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 10,// red_3
-                NodeCount = 4,
                 Type = TileType.Red,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -471,37 +378,29 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.TOP_RIGHT_SIDE, 2, 3, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
                         MonsterType = NpcType.Robot,
                         NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2,  1, 2, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
-                        DifficultyAreaType = DifficultyAreaType.None,
                         MeetType = MeetType.Wasteland,
-                        MonsterType = NpcType.None,
                         Meet = new Meet()
                         {
                             Lvl = 3,
                             Name = "Фабрика Робко"
-                        }
+                        },
                         NeighborsNode = [ 1,2,3 ]
                     }
                 },
@@ -509,7 +408,6 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 11,// red_4
-                NodeCount = 4,
                 Type = TileType.Red,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -518,37 +416,28 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.RIGHT_SIDE, 2, 3, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
                         MonsterType = NpcType.Monster,
                         NeighborsNode = [ HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE_V2, 1, 3 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, 1, 2 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
-                        DifficultyAreaType = DifficultyAreaType.None,
                         MeetType = MeetType.Settlement,
                         Meet = new Meet()
                         {
                             Lvl = 3,
                             Name = "Поместье Пендлтон"
                         },
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ 1 ]
                     }
                 },
@@ -556,7 +445,6 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 12,// red_5
-                NodeCount = 5,
                 Type = TileType.Red,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -564,33 +452,23 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 1,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
                         MonsterType = NpcType.Human,
                         NeighborsNode = [ HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.TOP_RIGHT_SIDE , 2, 4, 5 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE_V2, 2, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
-                        DifficultyAreaType = DifficultyAreaType.None,
                         MeetType = MeetType.Settlement,
-                        MonsterType = NpcType.None,
                         Meet = new Meet()
                         {
                             Lvl = 3,
@@ -601,9 +479,6 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 5,
-                        DifficultyAreaType = DifficultyAreaType.None,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.TOP_LEFT_SIDE_V2, 1, 4 ]
                     }
                 },
@@ -611,7 +486,6 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 13,// red_6
-                NodeCount = 3,
                 Type = TileType.Red,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -620,24 +494,18 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, 2, 3 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 3 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        MeetType = MeetType.None,
-                        MonsterType = NpcType.None,
                         NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 1, 2 ]
                     }
                 },

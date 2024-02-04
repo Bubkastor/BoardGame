@@ -4,7 +4,6 @@
     {
         public int Id { get; set; }
         public TileType Type { get; set; }
-        public int NodeCount { get; set; }
         public List<NodeProp> NodeProps { get; set; }
         public bool Visible { get; set; }
     }
