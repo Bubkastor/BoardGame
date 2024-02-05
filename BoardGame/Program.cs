@@ -1,7 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using BoardGame.Builder;
+using BoardGame.Game.Fight;
 using BoardGame.Game.Scenario;
+using BoardGame.Model.Enemy;
 using BoardGame.Model.Map;
+using BoardGame.Model.Player;
 using BoardGame.Model.Tiles;
 using BoardGame.Models.Map;
 using BoardGame.Repository;
@@ -9,7 +12,6 @@ using Microsoft.Msagl.Drawing;
 using Microsoft.Msagl.GraphViewerGdi;
 using System.Windows.Media;
 
-Console.WriteLine("Hello, World!");
 BuildNodeGraph builder = new BuildNodeGraph();
 
 //fill map
@@ -29,6 +31,22 @@ StartScenario startScenario = new StartScenario();
 //        }
 //    }
 //}
+
+var position = new CoordinatePoint(0, 0);
+
+INpcRepository npcRepository = new NpcRepository();
+
+Npc npc = npcRepository.GetEnymyByKind(BoardGame.Model.NpcType.Creature);
+npc.Position = new CoordinatePoint(0, 0);
+
+var player = new Player(position);
+Fight fight = new Fight();
+
+var isWinFight = fight.IsWinFight(player, npc);
+Console.WriteLine(npc.ToString());
+Console.WriteLine($"Fight is win?: {isWinFight}");
+Console.WriteLine($"Player HP: {player.HP.CurrentHp}");
+
 
 
 var til = playFieldTilRepository.GetPlayFieldTilById(14);

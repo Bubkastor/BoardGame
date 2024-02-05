@@ -256,9 +256,10 @@ namespace BoardGame.Repository
                 Properties = NpcProperties.Booty | NpcProperties.LongRange
             },
         };
+
         public Npc GetEnymyByKind(NpcType npcType)
         {
-            
+            return _npcs.Where(x => x.EnemyType == npcType).First();
         }
     }
 }

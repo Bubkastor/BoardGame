@@ -1,13 +1,24 @@
-﻿namespace BoardGame.Model.Player
+﻿using BoardGame.Model.Enemy;
+using BoardGame.Model.Map;
+
+namespace BoardGame.Model.Player
 {
     public class Player
     {
+        public Player(CoordinatePoint position) 
+        { 
+            Position = position;
+            HP = new HealPoint();
+        }
+
+        public CoordinatePoint Position { get; set; }
         public PlayerType PlayerType { get; init; }
         public HealPoint HP { get; set; }
         public Radiation Radiation { get; set; }
         public int Caps { get; set; }
         public SPECIAL Special { get; set; }
         public Experience Exp { get; set; }
+        public NpcProperties Properties { get; set; }
         public List<PeculiaritiesType> Peculiarities { get; set; }
         public List<Card.Card> Inventory { get; set; }
         public Card.Card EquipmentBody { get; set; }
