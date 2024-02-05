@@ -698,7 +698,6 @@ namespace BoardGame.Repository
                         NeighborsNode = [HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 2, 3]
                     },
                 },
-                },
             },
             new PlayFieldTil()
             {
