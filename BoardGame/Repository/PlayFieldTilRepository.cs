@@ -8,6 +8,7 @@ namespace BoardGame.Repository
     {
         private List<PlayFieldTil> _playFieldTils = new List<PlayFieldTil>()
         {
+            // green
             new PlayFieldTil()
             {
                 Id = 1,
@@ -18,7 +19,7 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 1,
-                        MonsterType = NpcType.Creature,
+                        NpcType = NpcType.Creature,
                         NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE,HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE,HelpClass.TOP_LEFT_SIDE_V2, 2, 3]
 
                     },
@@ -45,7 +46,7 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 1,
-                        MonsterType = NpcType.Creature,
+                        NpcType = NpcType.Creature,
                         NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.TOP_LEFT_SIDE,HelpClass.TOP_LEFT_SIDE_V2, 2, 3, 4]
                     },
                     new NodeProp()
@@ -86,7 +87,7 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 2,
-                        MonsterType = NpcType.Human,
+                        NpcType = NpcType.Human,
                         NeighborsNode = [ HelpClass.TOP_LEFT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
                     },
                     new NodeProp()
@@ -135,7 +136,7 @@ namespace BoardGame.Repository
                     {
                         IdNode = 4,
                         MeetType = MeetType.Wasteland,
-                        MonsterType = NpcType.Human,
+                        NpcType = NpcType.Human,
                         Meet = new Meet()
                         {
                             Name = "Лагерь Рейдоров",
@@ -156,7 +157,7 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         MeetType = MeetType.Wasteland,
-                        MonsterType = NpcType.Human,
+                        NpcType = NpcType.Human,
                         Meet = new Meet()
                         {
                             Name = "Супермакрет",
@@ -177,7 +178,7 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 4,
-                        MonsterType = NpcType.Human,
+                        NpcType = NpcType.Human,
                         NeighborsNode = [ HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.TOP_LEFT_SIDE_V2, 1, 3 ]
                     }
                 }
@@ -270,7 +271,7 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 1,
-                        MonsterType = NpcType.Creature,
+                        NpcType = NpcType.Creature,
                         NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, 2, 3, 4, 5 ]
                     },
                     new NodeProp()
@@ -300,6 +301,7 @@ namespace BoardGame.Repository
                     },
                 },
             },
+            // red
             new PlayFieldTil()
             {
                 Id = 8, // red_1
@@ -317,7 +319,7 @@ namespace BoardGame.Repository
                     {
                         IdNode = 2,
                         MeetType = MeetType.Wasteland,
-                        MonsterType = NpcType.SuperMutant,
+                        NpcType = NpcType.SuperMutant,
                         NeighborsNode = [HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.RIGHT_SIDE, 1, 3, 4 ]
                     },
                     new NodeProp()
@@ -350,7 +352,7 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 2,
-                        MonsterType = NpcType.SuperMutant,
+                        NpcType = NpcType.SuperMutant,
                         NeighborsNode = [HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 1, 3 ]
                     },
                     new NodeProp()
@@ -389,7 +391,7 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 3,
-                        MonsterType = NpcType.Robot,
+                        NpcType = NpcType.Robot,
                         NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2,  1, 2, 4 ]
                     },
                     new NodeProp()
@@ -421,7 +423,7 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 2,
-                        MonsterType = NpcType.Monster,
+                        NpcType = NpcType.Monster,
                         NeighborsNode = [ HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE_V2, 1, 3 ]
                     },
                     new NodeProp()
@@ -452,7 +454,7 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 1,
-                        MonsterType = NpcType.Human,
+                        NpcType = NpcType.Human,
                         NeighborsNode = [ HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.TOP_RIGHT_SIDE , 2, 4, 5 ]
                     },
                     new NodeProp()
@@ -510,7 +512,257 @@ namespace BoardGame.Repository
                     }
                 },
             },
-
+            // star
+            new PlayFieldTil()
+            {
+                Id = 14,// star_1
+                Type = TileType.Start,
+                Visible = true,
+                NodeProps = new List<NodeProp>()
+                {
+                    new NodeProp()
+                    {
+                        IdNode = 1,
+                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, 2, 4, 3, 5 ]
+                    },
+                    new NodeProp()
+                    {
+                        IdNode = 2,
+                        NeighborsNode = [HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 3, 4, 5 ]
+                    },
+                    new NodeProp()
+                    {
+                        IdNode = 3,
+                        NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 1, 2, 4 ,5 ]
+                    },
+                    new NodeProp()
+                    {
+                        IdNode = 4,
+                        DifficultyAreaType = DifficultyAreaType.Crossed,
+                        NeighborsNode = [ 1, 2, 3 ,5 ]
+                    },
+                    new NodeProp()
+                    {
+                        IdNode = 5,
+                        NeighborsNode = [ 1, 2, 3, 4 ]
+                    }
+                },
+            },
+             new PlayFieldTil()
+            {
+                Id = 15,// star_2
+                Type = TileType.Start,
+                Visible = true,
+                NodeProps = new List<NodeProp>()
+                {
+                    new NodeProp()
+                    {
+                        IdNode = 1,
+                        MeetType = MeetType.Settlement,
+                        Meet = new Meet()
+                        {
+                            Lvl = 3,
+                            Name = "Подземка"
+                        },
+                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, 2 ]
+                    },
+                    new NodeProp()
+                    {
+                        IdNode = 2,
+                        NpcType = NpcType.SuperMutant,
+                        NeighborsNode = [HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, 1, 3, 5, 6 ]
+                    },
+                    new NodeProp()
+                    {
+                        IdNode = 3,
+                        NeighborsNode = [ HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 2, 4 ,5 ]
+                    },
+                    new NodeProp()
+                    {
+                        IdNode = 4,
+                        NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE_V2, 3, 5]
+                    },
+                    new NodeProp()
+                    {
+                        IdNode = 5,
+                        MeetType = MeetType.Wasteland,
+                        Meet = new Meet()
+                        {
+                            Lvl = 4,
+                            Name = "Центральный Бостон"
+                        },
+                        NeighborsNode = [HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.LEFT_SIDE_V2, 2, 3, 4, 6 ]
+                    },
+                    new NodeProp()
+                    {
+                        IdNode = 6,
+                        NeighborsNode = [HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.TOP_LEFT_SIDE_V2, 1, 2, 5 ]
+                    }
+                },
+            },
+            new PlayFieldTil()
+            {
+                Id = 16,// star_2_1
+                Type = TileType.Start,
+                Visible = true,
+                NodeProps = new List<NodeProp>()
+                {
+                },
+            },
+            new PlayFieldTil()
+            {
+                Id = 17,// star_2_2
+                Type = TileType.Start,
+                Visible = true,
+                NodeProps = new List<NodeProp>()
+                {
+                },
+            },
+            new PlayFieldTil()
+            {
+                Id = 18,// star_3_1
+                Type = TileType.Start,
+                Visible = true,
+                NodeProps = new List<NodeProp>()
+                {
+                },
+            },
+            new PlayFieldTil()
+            {
+                Id = 19,// star_3_2
+                Type = TileType.Start,
+                Visible = true,
+                NodeProps = new List<NodeProp>()
+                {
+                    new NodeProp()
+                    {
+                        IdNode = 1,
+                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2 , 2, 3, 4 ]
+                    },
+                    new NodeProp()
+                    {
+                        IdNode = 2,
+                        NeighborsNode = [HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
+                    },
+                    new NodeProp()
+                    {
+                        IdNode = 3,
+                        NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 1, 2, 4 ]
+                    },
+                    new NodeProp()
+                    {
+                        IdNode = 4,
+                        MeetType = MeetType.Settlement,
+                        Meet = new Meet()
+                        {
+                            Lvl = 4,
+                            Name = "Даймон Сити"
+                        },
+                        NeighborsNode = [ 1, 2, 3]
+                    },
+                },
+            },
+            new PlayFieldTil()
+            {
+                Id = 20,// star_4_1
+                Type = TileType.Start,
+                Visible = true,
+                NodeProps = new List<NodeProp>()
+                {
+                    new NodeProp()
+                    {
+                        IdNode = 1,
+                        NpcType = NpcType.Robot,
+                        MeetType = MeetType.Wasteland,
+                        Meet = new Meet()
+                        {
+                            Lvl = 4,
+                            Name = "Руины тис"
+                        },
+                        NeighborsNode = [ HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2,HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, 2 ]
+                    },
+                    new NodeProp()
+                    {
+                        IdNode = 2,
+                        NeighborsNode = [HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
+                    },
+                    new NodeProp()
+                    {
+                        IdNode = 3,
+                        DifficultyAreaType = DifficultyAreaType.Crossed,
+                        NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE_V2, 2, 4 ]
+                    },
+                    new NodeProp()
+                    {
+                        IdNode = 4,
+                        NeighborsNode = [HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 2, 3]
+                    },
+                },
+                },
+            },
+            new PlayFieldTil()
+            {
+                Id = 21,// star_4_2
+                Type = TileType.Start,
+                Visible = true,
+                NodeProps = new List<NodeProp>()
+                {
+                },
+            },
+            new PlayFieldTil()
+            {
+                Id = 22,// star_5_1
+                Type = TileType.Start,
+                Visible = true,
+                NodeProps = new List<NodeProp>()
+                {
+                },
+            },
+            new PlayFieldTil()
+            {
+                Id = 23,// star_5_2
+                Type = TileType.Start,
+                Visible = true,
+                NodeProps = new List<NodeProp>()
+                {
+                },
+            },
+            new PlayFieldTil()
+            {
+                Id = 24,// star_6_1
+                Type = TileType.Start,
+                Visible = true,
+                NodeProps = new List<NodeProp>()
+                {
+                },
+            },
+            new PlayFieldTil()
+            {
+                Id = 25,// star_6_2
+                Type = TileType.Start,
+                Visible = true,
+                NodeProps = new List<NodeProp>()
+                {
+                },
+            },
+            new PlayFieldTil()
+            {
+                Id = 26,// star_7_1
+                Type = TileType.Start,
+                Visible = true,
+                NodeProps = new List<NodeProp>()
+                {
+                },
+            },
+            new PlayFieldTil()
+            {
+                Id = 27,// star_7_2
+                Type = TileType.Start,
+                Visible = true,
+                NodeProps = new List<NodeProp>()
+                {
+                },
+            }
         };
         public PlayFieldTil GetPlayFieldTilById(int id)
         {
