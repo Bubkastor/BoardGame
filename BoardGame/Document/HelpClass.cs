@@ -76,5 +76,20 @@ namespace BoardGame.Document
         /// -6     /
         /// </summary>
         public const double TOP_LEFT_SIDE_V2 = -6.5;
+
+        public static double[] AllSide = [
+            TOP_RIGHT_SIDE,
+            TOP_RIGHT_SIDE_V2,
+            RIGHT_SIDE,
+            RIGHT_SIDE_V2,
+            BOTTOM_RIGHT_SIDE,
+            BOTTOM_RIGHT_SIDE_V2,
+            BOTTOM_LEFT_SIDE,
+            BOTTOM_LEFT_SIDE_V2,
+            LEFT_SIDE,
+            LEFT_SIDE_V2,
+            TOP_LEFT_SIDE,
+            TOP_LEFT_SIDE_V2
+        ];
     }
 }

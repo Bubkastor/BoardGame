@@ -523,7 +523,7 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 1,
-                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, 2, 4, 3, 5 ]
+                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, 2, 4, 3 ]
                     },
                     new NodeProp()
                     {
@@ -544,7 +544,7 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 5,
-                        NeighborsNode = [ 1, 2, 3, 4 ]
+                        NeighborsNode = [ 2, 3, 4 ]
                     }
                 },
             },

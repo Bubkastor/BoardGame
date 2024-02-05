@@ -1,6 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using BoardGame.Builder;
+using BoardGame.Game.Scenario;
 using BoardGame.Model.Map;
+using BoardGame.Model.Tiles;
+using BoardGame.Models.Map;
 using BoardGame.Repository;
 using Microsoft.Msagl.Drawing;
 using Microsoft.Msagl.GraphViewerGdi;
@@ -11,13 +14,32 @@ BuildNodeGraph builder = new BuildNodeGraph();
 
 //fill map
 PlayFieldTilRepository playFieldTilRepository = new PlayFieldTilRepository();
-var til = playFieldTilRepository.GetPlayFieldTilById(1);
+
+//Map map =;
+StartScenario startScenario = new StartScenario();
+
+//for (int i = 0; i < startScenario.Map.Rank; i++)
+//{
+//    for (int j = 0; j < startScenario.Map.GetLength(i); j++)
+//    {
+//        var cell = startScenario.Map[i, j];
+//        if(cell.IdTil != 0)
+//        {
+//            var til = playFieldTilRepository.GetPlayFieldTilById(cell.IdTil);
+//        }
+//    }
+//}
+
+
+var til = playFieldTilRepository.GetPlayFieldTilById(14);
 var til2 = playFieldTilRepository.GetPlayFieldTilById(2);
 var til3 = playFieldTilRepository.GetPlayFieldTilById(3);
+til2.Visible = true;
+til3.Visible = true;
 var node = builder.Create(til);
-builder.AddRight(node, 1, til2);
-builder.AddBottomRight(node, 1, til3);
-builder.AddBottomLeft(node, 2, til3);
+builder.AddRight(node, til.Id, til2);
+builder.AddRight(node, til2.Id, til3);
+
 
 //show View
 Form form = new Form();
@@ -26,7 +48,7 @@ Graph graph = new Graph("map");
 
 Dictionary<CoordinatePoint, bool> isAddedCoordinatePoint = new Dictionary<CoordinatePoint, bool>();
 
-AddGraph(node.Item2, graph);
+AddGraph(node.NodeList, graph);
 
 
 viewer.Graph = graph;

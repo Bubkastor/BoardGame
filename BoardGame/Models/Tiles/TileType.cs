@@ -5,6 +5,7 @@
     /// </summary>
     public enum TileType
     {
+        None = 0,
         /// <summary>
         /// Двухстороняя
         /// </summary>
