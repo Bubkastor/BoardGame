@@ -16,8 +16,8 @@ namespace BoardGame.Builder
         {
             Dictionary<double, double> reverSide = new Dictionary<double, double>()
             {
-                { HelpClass.BOTTOM_LEFT_SIDE, HelpClass.TOP_RIGHT_SIDE},
-                { HelpClass.BOTTOM_LEFT_SIDE_V2 , HelpClass.TOP_RIGHT_SIDE_V2 }
+                { TileSide.BOTTOM_LEFT_SIDE, TileSide.TOP_RIGHT_SIDE},
+                { TileSide.BOTTOM_LEFT_SIDE_V2 , TileSide.TOP_RIGHT_SIDE_V2 }
             };
 
             Connect(root, idPlayFieldTil, playFieldTils, reverSide);
@@ -27,8 +27,8 @@ namespace BoardGame.Builder
         {
             Dictionary<double, double> reverSide = new Dictionary<double, double>()
             {
-                { HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE},
-                { HelpClass.BOTTOM_RIGHT_SIDE_V2 , HelpClass.TOP_LEFT_SIDE_V2 }
+                { TileSide.BOTTOM_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE},
+                { TileSide.BOTTOM_RIGHT_SIDE_V2 , TileSide.TOP_LEFT_SIDE_V2 }
             };
 
             Connect(root, idPlayFieldTil, playFieldTils, reverSide);
@@ -38,8 +38,8 @@ namespace BoardGame.Builder
         {
             Dictionary<double, double> reverSide = new Dictionary<double, double>()
             {
-                { HelpClass.LEFT_SIDE, HelpClass.RIGHT_SIDE },
-                { HelpClass.LEFT_SIDE_V2 , HelpClass.RIGHT_SIDE_V2 }
+                { TileSide.LEFT_SIDE, TileSide.RIGHT_SIDE },
+                { TileSide.LEFT_SIDE_V2 , TileSide.RIGHT_SIDE_V2 }
             };
 
             Connect(root, idPlayFieldTil, playFieldTils, reverSide);
@@ -49,8 +49,8 @@ namespace BoardGame.Builder
         {
             Dictionary<double, double> reverSide = new Dictionary<double, double>()
             {
-                { HelpClass.RIGHT_SIDE, HelpClass.LEFT_SIDE },
-                { HelpClass.RIGHT_SIDE_V2, HelpClass.LEFT_SIDE_V2 },
+                { TileSide.RIGHT_SIDE, TileSide.LEFT_SIDE },
+                { TileSide.RIGHT_SIDE_V2, TileSide.LEFT_SIDE_V2 },
             };
 
             Connect(root, idPlayFieldTil, playFieldTils, reverSide);
@@ -62,8 +62,8 @@ namespace BoardGame.Builder
         {
             Dictionary<double, double> reverSide = new Dictionary<double, double>()
             {
-                { HelpClass.TOP_LEFT_SIDE , HelpClass.BOTTOM_RIGHT_SIDE},
-                { HelpClass.TOP_LEFT_SIDE_V2 , HelpClass.BOTTOM_RIGHT_SIDE_V2 }
+                { TileSide.TOP_LEFT_SIDE , TileSide.BOTTOM_RIGHT_SIDE},
+                { TileSide.TOP_LEFT_SIDE_V2 , TileSide.BOTTOM_RIGHT_SIDE_V2 }
             };
 
             Connect(root, idPlayFieldTil, playFieldTils, reverSide);
@@ -73,8 +73,8 @@ namespace BoardGame.Builder
         {
             Dictionary<double, double> reverSide = new Dictionary<double, double>()
             {
-                { HelpClass.TOP_RIGHT_SIDE, HelpClass.BOTTOM_LEFT_SIDE},
-                { HelpClass.TOP_RIGHT_SIDE_V2 , HelpClass.BOTTOM_LEFT_SIDE_V2 }
+                { TileSide.TOP_RIGHT_SIDE, TileSide.BOTTOM_LEFT_SIDE},
+                { TileSide.TOP_RIGHT_SIDE_V2 , TileSide.BOTTOM_LEFT_SIDE_V2 }
             };
 
             Connect(root, idPlayFieldTil, playFieldTils, reverSide);
@@ -105,7 +105,7 @@ namespace BoardGame.Builder
                 {
                     Coordinate = coord,
                     Neighbors = new List<Node>(),
-                    Side = HelpClass.AllSide.ToList(),
+                    Side = TileSide.AllSide.ToList(),
                     DifficultyAreaType = Model.DifficultyAreaType.None
                 });
             }

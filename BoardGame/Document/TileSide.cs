@@ -15,7 +15,7 @@ namespace BoardGame.Document
     ///     -4    \   /   -3
     ///     -4.5   \ /    -3.5
     /// </summary>
-    public static class HelpClass
+    public static class TileSide
     {
         /// <summary>
         /// \   -1

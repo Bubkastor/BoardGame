@@ -20,19 +20,19 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         NpcType = NpcType.Creature,
-                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE,HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE,HelpClass.TOP_LEFT_SIDE_V2, 2, 3]
+                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE,TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.TOP_LEFT_SIDE,TileSide.TOP_LEFT_SIDE_V2, 2, 3]
 
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
-                        NeighborsNode = [ HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE,HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE_V2, 1, 3]
+                        NeighborsNode = [ TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE,TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 1, 3]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        NeighborsNode = [ HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE,HelpClass.LEFT_SIDE_V2, HelpClass.TOP_LEFT_SIDE_V2, 1, 2]
+                        NeighborsNode = [ TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE,TileSide.LEFT_SIDE_V2, TileSide.TOP_LEFT_SIDE_V2, 1, 2]
                     }
                 }
             },
@@ -47,12 +47,12 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         NpcType = NpcType.Creature,
-                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.TOP_LEFT_SIDE,HelpClass.TOP_LEFT_SIDE_V2, 2, 3, 4]
+                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.TOP_LEFT_SIDE,TileSide.TOP_LEFT_SIDE_V2, 2, 3, 4]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
-                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE,HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, 1, 3]
+                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE,TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, 1, 3]
                     },
                     new NodeProp()
                     {
@@ -63,12 +63,12 @@ namespace BoardGame.Repository
                             Name = "Эшбери-Роуд",
                             Lvl = 1
                         },
-                        NeighborsNode = [ HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 2, 4 ]
+                        NeighborsNode = [ TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 2, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
-                        NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 1, 3 ]
+                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 3 ]
                     }
                 }
             },
@@ -82,19 +82,19 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 1,
-                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE,HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.TOP_LEFT_SIDE, HelpClass.RIGHT_SIDE, 2 ]
+                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE,TileSide.TOP_RIGHT_SIDE_V2, TileSide.TOP_LEFT_SIDE, TileSide.RIGHT_SIDE, 2 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         NpcType = NpcType.Human,
-                        NeighborsNode = [ HelpClass.TOP_LEFT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
+                        NeighborsNode = [ TileSide.TOP_LEFT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 2, 4 ]
+                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 2, 4 ]
                     },
                     new NodeProp()
                     {
@@ -105,7 +105,7 @@ namespace BoardGame.Repository
                             Name = "Заправка Красная ракет",
                             Lvl = 2,
                         },
-                        NeighborsNode = [ HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, 2, 3 ]
+                        NeighborsNode = [ TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, 2, 3 ]
                     }
                 }
             },
@@ -119,18 +119,18 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 1,
-                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.RIGHT_SIDE, 2, 3, 4]
+                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.RIGHT_SIDE, 2, 3, 4]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        NeighborsNode = [ HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2,HelpClass.BOTTOM_LEFT_SIDE_V2, 1, 3, 4]
+                        NeighborsNode = [ TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2,TileSide.BOTTOM_LEFT_SIDE_V2, 1, 3, 4]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        NeighborsNode = [ HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE,HelpClass.LEFT_SIDE_V2,HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, 1, 2, 4 ]
+                        NeighborsNode = [ TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE,TileSide.LEFT_SIDE_V2,TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, 1, 2, 4 ]
                     },
                     new NodeProp()
                     {
@@ -163,23 +163,23 @@ namespace BoardGame.Repository
                             Name = "Супермакрет",
                             Lvl = 2
                         },
-                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, 2, 3, 4]
+                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, 2, 3, 4]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
-                        NeighborsNode = [HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 3]
+                        NeighborsNode = [TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE_V2, 1, 2, 4 ]
+                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 1, 2, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
                         NpcType = NpcType.Human,
-                        NeighborsNode = [ HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.TOP_LEFT_SIDE_V2, 1, 3 ]
+                        NeighborsNode = [ TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.TOP_LEFT_SIDE_V2, 1, 3 ]
                     }
                 }
             },
@@ -194,13 +194,13 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE,HelpClass.LEFT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, 2, 3]
+                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE,TileSide.LEFT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, 2, 3]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
 
-                        NeighborsNode = [HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 3]
+                        NeighborsNode = [TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3]
                     },
                     new NodeProp()
                     {
@@ -213,7 +213,7 @@ namespace BoardGame.Repository
                             Name = "Ферма Хофмана",
                             Lvl = 2
                         },
-                        NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE_V2, 1, 2 ]
+                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 1, 2 ]
                     }
                 }
             },
@@ -228,13 +228,13 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE, 2, 3]
+                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE, 2, 3]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        NeighborsNode = [HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, 1, 3]
+                        NeighborsNode = [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, 1, 3]
                     },
                     new NodeProp()
                     {
@@ -245,19 +245,19 @@ namespace BoardGame.Repository
                             Name = "Шоссе 74",
                             Lvl = 1
                         },
-                        NeighborsNode = [ HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 2, 4, 5 ]
+                        NeighborsNode = [ TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 2, 4, 5 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 2, 5 ]
+                        NeighborsNode = [TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.LEFT_SIDE_V2, 2, 5 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 5,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 4, 3 ]
+                        NeighborsNode = [TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 4, 3 ]
                     },
                 },
             },
@@ -272,32 +272,32 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         NpcType = NpcType.Creature,
-                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, 2, 3, 4, 5 ]
+                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, 2, 3, 4, 5 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        NeighborsNode = [HelpClass.TOP_RIGHT_SIDE,HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, 1, 3 ]
+                        NeighborsNode = [TileSide.TOP_RIGHT_SIDE,TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, 1, 3 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        NeighborsNode = [ HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 2 ]
+                        NeighborsNode = [ TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 2 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        NeighborsNode = [HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 1, 5 ]
+                        NeighborsNode = [TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 5 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 5,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
                         MeetType = MeetType.Vault84,
-                        NeighborsNode = [HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.TOP_LEFT_SIDE_V2, 1, 4 ]
+                        NeighborsNode = [TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.TOP_LEFT_SIDE_V2, 1, 4 ]
                     },
                 },
             },
@@ -313,26 +313,26 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, 2, 4 ]
+                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, 2, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         MeetType = MeetType.Wasteland,
                         NpcType = NpcType.SuperMutant,
-                        NeighborsNode = [HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.RIGHT_SIDE, 1, 3, 4 ]
+                        NeighborsNode = [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.RIGHT_SIDE, 1, 3, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [ HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE_V2 , 2, 4 ]
+                        NeighborsNode = [ TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2 , 2, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.LEFT_SIDE_V2, 1,2,3 ]
+                        NeighborsNode = [TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE, TileSide.LEFT_SIDE_V2, 1,2,3 ]
                     }
                 },
             },
@@ -347,18 +347,18 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.TOP_LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 2, 3 ]
+                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.TOP_LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 2, 3 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         NpcType = NpcType.SuperMutant,
-                        NeighborsNode = [HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 1, 3 ]
+                        NeighborsNode = [TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 3 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        NeighborsNode = [ HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, 1, 2, 4 ]
+                        NeighborsNode = [ TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, 1, 2, 4 ]
                     },
                     new NodeProp()
                     {
@@ -380,19 +380,19 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [ HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.TOP_RIGHT_SIDE, 2, 3, 4 ]
+                        NeighborsNode = [ TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.TOP_RIGHT_SIDE, 2, 3, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
+                        NeighborsNode = [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
                         NpcType = NpcType.Robot,
-                        NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2,  1, 2, 4 ]
+                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2,  1, 2, 4 ]
                     },
                     new NodeProp()
                     {
@@ -418,18 +418,18 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        NeighborsNode = [ HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.RIGHT_SIDE, 2, 3, 4 ]
+                        NeighborsNode = [ TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.RIGHT_SIDE, 2, 3, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         NpcType = NpcType.Monster,
-                        NeighborsNode = [ HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE_V2, 1, 3 ]
+                        NeighborsNode = [ TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 1, 3 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        NeighborsNode = [ HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, 1, 2 ]
+                        NeighborsNode = [ TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, 1, 2 ]
                     },
                     new NodeProp()
                     {
@@ -455,17 +455,17 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         NpcType = NpcType.Human,
-                        NeighborsNode = [ HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.TOP_RIGHT_SIDE , 2, 4, 5 ]
+                        NeighborsNode = [ TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.TOP_RIGHT_SIDE , 2, 4, 5 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
-                        NeighborsNode = [HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
+                        NeighborsNode = [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE_V2, 2, 4 ]
+                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 2, 4 ]
                     },
                     new NodeProp()
                     {
@@ -476,12 +476,12 @@ namespace BoardGame.Repository
                             Lvl = 3,
                             Name = "Башня"
                         },
-                        NeighborsNode = [ HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 1, 2, 3, 5 ]
+                        NeighborsNode = [ TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 2, 3, 5 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 5,
-                        NeighborsNode = [ HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.TOP_LEFT_SIDE_V2, 1, 4 ]
+                        NeighborsNode = [ TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.TOP_LEFT_SIDE_V2, 1, 4 ]
                     }
                 },
             },
@@ -496,19 +496,19 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, 2, 3 ]
+                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, 2, 3 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 3 ]
+                        NeighborsNode = [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 1, 2 ]
+                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 2 ]
                     }
                 },
             },
@@ -523,17 +523,17 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 1,
-                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, 2, 4, 3 ]
+                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, 2, 4, 3 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
-                        NeighborsNode = [HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 3, 4, 5 ]
+                        NeighborsNode = [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3, 4, 5 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 1, 2, 4 ,5 ]
+                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 2, 4 ,5 ]
                     },
                     new NodeProp()
                     {
@@ -564,23 +564,23 @@ namespace BoardGame.Repository
                             Lvl = 3,
                             Name = "Подземка"
                         },
-                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, 2 ]
+                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, 2 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         NpcType = NpcType.SuperMutant,
-                        NeighborsNode = [HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, 1, 3, 5, 6 ]
+                        NeighborsNode = [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, 1, 3, 5, 6 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        NeighborsNode = [ HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 2, 4 ,5 ]
+                        NeighborsNode = [ TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 2, 4 ,5 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
-                        NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE_V2, 3, 5]
+                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 3, 5]
                     },
                     new NodeProp()
                     {
@@ -591,12 +591,12 @@ namespace BoardGame.Repository
                             Lvl = 4,
                             Name = "Центральный Бостон"
                         },
-                        NeighborsNode = [HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.LEFT_SIDE_V2, 2, 3, 4, 6 ]
+                        NeighborsNode = [TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, TileSide.LEFT_SIDE_V2, 2, 3, 4, 6 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 6,
-                        NeighborsNode = [HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.TOP_LEFT_SIDE_V2, 1, 2, 5 ]
+                        NeighborsNode = [TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.TOP_LEFT_SIDE_V2, 1, 2, 5 ]
                     }
                 },
             },
@@ -637,17 +637,17 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 1,
-                        NeighborsNode = [ HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2 , 2, 3, 4 ]
+                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2 , 2, 3, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
-                        NeighborsNode = [HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
+                        NeighborsNode = [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 1, 2, 4 ]
+                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 2, 4 ]
                     },
                     new NodeProp()
                     {
@@ -679,23 +679,23 @@ namespace BoardGame.Repository
                             Lvl = 4,
                             Name = "Руины тис"
                         },
-                        NeighborsNode = [ HelpClass.TOP_LEFT_SIDE, HelpClass.TOP_LEFT_SIDE_V2,HelpClass.TOP_RIGHT_SIDE, HelpClass.TOP_RIGHT_SIDE_V2, HelpClass.RIGHT_SIDE, 2 ]
+                        NeighborsNode = [ TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2,TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, 2 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
-                        NeighborsNode = [HelpClass.TOP_LEFT_SIDE_V2, HelpClass.LEFT_SIDE, HelpClass.LEFT_SIDE_V2, HelpClass.RIGHT_SIDE, HelpClass.RIGHT_SIDE_V2, HelpClass.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
+                        NeighborsNode = [TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        NeighborsNode = [ HelpClass.BOTTOM_RIGHT_SIDE, HelpClass.BOTTOM_RIGHT_SIDE_V2, HelpClass.BOTTOM_LEFT_SIDE_V2, 2, 4 ]
+                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 2, 4 ]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
-                        NeighborsNode = [HelpClass.BOTTOM_LEFT_SIDE, HelpClass.BOTTOM_LEFT_SIDE_V2, HelpClass.LEFT_SIDE_V2, 2, 3]
+                        NeighborsNode = [TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 2, 3]
                     },
                 },
             },
