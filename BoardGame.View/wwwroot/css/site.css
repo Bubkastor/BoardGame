@@ -20,3 +20,37 @@ html {
 body {
   margin-bottom: 60px;
 }
+.play-field {
+  position: relative;
+}
+
+.hexagon {
+  fill: green;
+  stroke: black;
+  stroke-width: 2;
+}
+
+.node1 {
+  fill: rgba(18, 255, 18, 0.5);
+  stroke: black;
+  stroke-width: 1;
+}
+.node2 {
+  fill: rgba(0, 46, 251, 0.5);
+  stroke: black;
+  stroke-width: 1;
+}
+.node3 {
+  fill: rgba(255, 0, 0, 0.5);
+  stroke: black;
+  stroke-width: 1;
+}
+.node4 {
+  fill: rgba(212, 255, 0, 0.862);
+  stroke: black;
+  stroke-width: 1;
+}
+.line {
+  stroke: black;
+  stroke-width: 1;
+}
