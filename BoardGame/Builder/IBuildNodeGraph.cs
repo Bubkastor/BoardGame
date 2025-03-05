@@ -6,13 +6,13 @@ namespace BoardGame.Builder
 {
     public interface IBuildNodeGraph
     {
-        public IMap Create(PlayFieldTil playFieldTils);
-        public void AddRight(IMap left, int idPlayFieldTil, PlayFieldTil playFieldTils);
-        public void AddLeft(IMap right, int idPlayFieldTil, PlayFieldTil playFieldTils);
-        public void AddTopRight(IMap topRight, int rootNodeId, PlayFieldTil playFieldTils);
-        public void AddTopLeft(IMap topLeft, int rootNodeId, PlayFieldTil playFieldTils);
-        public void AddBottomRight(IMap bottomRight, int rootNodeId, PlayFieldTil playFieldTils);
-        public void AddBottomLeft(IMap bottomLeft, int rootNodeId, PlayFieldTil playFieldTils);
+        IMap Create(PlayFieldTil playFieldTils);
+        void AddRight(IMap left, int idPlayFieldTil, PlayFieldTil playFieldTil);
+        void AddLeft(IMap right, int idPlayFieldTil, PlayFieldTil playFieldTil);
+        void AddTopRight(IMap topRight, int rootNodeId, PlayFieldTil playFieldTil);
+        void AddTopLeft(IMap topLeft, int rootNodeId, PlayFieldTil playFieldTil);
+        void AddBottomRight(IMap bottomRight, int rootNodeId, PlayFieldTil playFieldTil);
+        void AddBottomLeft(IMap bottomLeft, int rootNodeId, PlayFieldTil playFieldTil);
 
     }
 }

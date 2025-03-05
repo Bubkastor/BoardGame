@@ -10,6 +10,6 @@ namespace BoardGame.Repository
 {
     public interface INpcRepository
     {
-        Npc GetEnymyByKind(NpcType npcType);
+        Npc GetEnemyByKind(NpcType npcType);
     }
 }

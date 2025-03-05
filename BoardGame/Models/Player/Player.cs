@@ -1,7 +1,7 @@
 ﻿using BoardGame.Model.Enemy;
 using BoardGame.Model.Map;
 
-namespace BoardGame.Model.Player
+namespace BoardGame.Model
 {
     public class Player
     {
@@ -9,6 +9,10 @@ namespace BoardGame.Model.Player
         { 
             Position = position;
             HP = new HealPoint();
+        }
+        public Player(PlayerType playerType, SPECIAL sPECIAL){
+            PlayerType = playerType;
+            Special = sPECIAL;
         }
 
         public CoordinatePoint Position { get; set; }

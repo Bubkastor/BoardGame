@@ -12,72 +12,72 @@ namespace BoardGame.Builder
 {
     internal class BuildNodeGraph : IBuildNodeGraph
     {
-        public void AddBottomLeft(IMap root, int idPlayFieldTil, PlayFieldTil playFieldTils)
+        public void AddBottomLeft(IMap root, int idPlayFieldTil, PlayFieldTil playFieldTil)
         {
-            Dictionary<double, double> reverSide = new Dictionary<double, double>()
+            Dictionary<double, double> reversSide = new Dictionary<double, double>()
             {
                 { TileSide.BOTTOM_LEFT_SIDE, TileSide.TOP_RIGHT_SIDE},
                 { TileSide.BOTTOM_LEFT_SIDE_V2 , TileSide.TOP_RIGHT_SIDE_V2 }
             };
 
-            Connect(root, idPlayFieldTil, playFieldTils, reverSide);
+            Connect(root, idPlayFieldTil, playFieldTil, reversSide);
         }
 
-        public void AddBottomRight(IMap root, int idPlayFieldTil, PlayFieldTil playFieldTils)
+        public void AddBottomRight(IMap root, int idPlayFieldTil, PlayFieldTil playFieldTil)
         {
-            Dictionary<double, double> reverSide = new Dictionary<double, double>()
+            Dictionary<double, double> reversSide = new Dictionary<double, double>()
             {
                 { TileSide.BOTTOM_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE},
                 { TileSide.BOTTOM_RIGHT_SIDE_V2 , TileSide.TOP_LEFT_SIDE_V2 }
             };
 
-            Connect(root, idPlayFieldTil, playFieldTils, reverSide);
+            Connect(root, idPlayFieldTil, playFieldTil, reversSide);
         }
 
-        public void AddLeft(IMap root, int idPlayFieldTil, PlayFieldTil playFieldTils)
+        public void AddLeft(IMap root, int idPlayFieldTil, PlayFieldTil playFieldTil)
         {
-            Dictionary<double, double> reverSide = new Dictionary<double, double>()
+            Dictionary<double, double> reversSide = new Dictionary<double, double>()
             {
                 { TileSide.LEFT_SIDE, TileSide.RIGHT_SIDE },
                 { TileSide.LEFT_SIDE_V2 , TileSide.RIGHT_SIDE_V2 }
             };
 
-            Connect(root, idPlayFieldTil, playFieldTils, reverSide);
+            Connect(root, idPlayFieldTil, playFieldTil, reversSide);
         }
 
-        public void AddRight(IMap root, int idPlayFieldTil, PlayFieldTil playFieldTils)
+        public void AddRight(IMap root, int idPlayFieldTil, PlayFieldTil playFieldTil)
         {
-            Dictionary<double, double> reverSide = new Dictionary<double, double>()
+            Dictionary<double, double> reversSide = new Dictionary<double, double>()
             {
                 { TileSide.RIGHT_SIDE, TileSide.LEFT_SIDE },
                 { TileSide.RIGHT_SIDE_V2, TileSide.LEFT_SIDE_V2 },
             };
 
-            Connect(root, idPlayFieldTil, playFieldTils, reverSide);
+            Connect(root, idPlayFieldTil, playFieldTil, reversSide);
         }
 
       
 
-        public void AddTopLeft(IMap root, int idPlayFieldTil, PlayFieldTil playFieldTils)
+        public void AddTopLeft(IMap root, int idPlayFieldTil, PlayFieldTil playFieldTil)
         {
-            Dictionary<double, double> reverSide = new Dictionary<double, double>()
+            Dictionary<double, double> reversSide = new Dictionary<double, double>()
             {
                 { TileSide.TOP_LEFT_SIDE , TileSide.BOTTOM_RIGHT_SIDE},
                 { TileSide.TOP_LEFT_SIDE_V2 , TileSide.BOTTOM_RIGHT_SIDE_V2 }
             };
 
-            Connect(root, idPlayFieldTil, playFieldTils, reverSide);
+            Connect(root, idPlayFieldTil, playFieldTil, reversSide);
         }
 
-        public void AddTopRight(IMap root, int idPlayFieldTil, PlayFieldTil playFieldTils)
+        public void AddTopRight(IMap root, int idPlayFieldTil, PlayFieldTil playFieldTil)
         {
-            Dictionary<double, double> reverSide = new Dictionary<double, double>()
+            Dictionary<double, double> reversSide = new Dictionary<double, double>()
             {
                 { TileSide.TOP_RIGHT_SIDE, TileSide.BOTTOM_LEFT_SIDE},
                 { TileSide.TOP_RIGHT_SIDE_V2 , TileSide.BOTTOM_LEFT_SIDE_V2 }
             };
 
-            Connect(root, idPlayFieldTil, playFieldTils, reverSide);
+            Connect(root, idPlayFieldTil, playFieldTil, reversSide);
         }
 
         public IMap Create(PlayFieldTil playFieldTils)
@@ -128,7 +128,7 @@ namespace BoardGame.Builder
             return new Map(result, keyValues);
         }
 
-        private void Connect(IMap root, int idPlayFieldTil, PlayFieldTil playFieldTils, Dictionary<double, double> reverSide)
+        private void Connect(IMap root, int idPlayFieldTil, PlayFieldTil playFieldTils, Dictionary<double, double> reversSide)
         {
             IMap second;
             if (root.NodeList.ContainsKey(new CoordinatePoint(playFieldTils.Id, playFieldTils.NodeProps[0].IdNode)))
@@ -150,15 +150,15 @@ namespace BoardGame.Builder
                 {
                     continue;
                 }
-                if (item.Side.Contains(reverSide.Keys.First()))
+                if (item.Side.Contains(reversSide.Keys.First()))
                 {
                     nodeSideConnect.Add(item);
-                    item.Side.RemoveAll(x => x == reverSide.Keys.First());
+                    item.Side.RemoveAll(x => x == reversSide.Keys.First());
                 }
-                if (item.Side.Contains(reverSide.Keys.Last()))
+                if (item.Side.Contains(reversSide.Keys.Last()))
                 {
                     nodeSideConnectV2.Add(item);
-                    item.Side.RemoveAll(x => x == reverSide.Keys.Last());
+                    item.Side.RemoveAll(x => x == reversSide.Keys.Last());
                 }
             };
 
@@ -169,7 +169,7 @@ namespace BoardGame.Builder
                 {
                     continue;
                 }
-                var rever = reverSide[reverSide.Keys.First()];
+                var rever = reversSide[reversSide.Keys.First()];
 
                 if (secondNode.Side.Contains(rever))
                 {
@@ -187,7 +187,7 @@ namespace BoardGame.Builder
                     secondNode.Side.RemoveAll(x => x == rever);
                 }
 
-                var reverV2 = reverSide[reverSide.Keys.Last()];
+                var reverV2 = reversSide[reversSide.Keys.Last()];
                 if (secondNode.Side.Contains(reverV2))
                 {
                     foreach (var nodeSCV2 in nodeSideConnectV2)

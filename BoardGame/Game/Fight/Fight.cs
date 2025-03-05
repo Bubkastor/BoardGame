@@ -1,5 +1,5 @@
 ﻿using BoardGame.Model.Enemy;
-using BoardGame.Model.Player;
+using BoardGame.Model;
 using BoardGame.Models;
 using System;
 using System.Collections.Generic;

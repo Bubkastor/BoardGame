@@ -4,10 +4,11 @@ using BoardGame.Game.Fight;
 using BoardGame.Game.Scenario;
 using BoardGame.Model.Enemy;
 using BoardGame.Model.Map;
-using BoardGame.Model.Player;
+using BoardGame.Model;
 using BoardGame.Model.Tiles;
 using BoardGame.Models.Map;
 using BoardGame.Repository;
+using System.Xml;
 // using Microsoft.Msagl.Drawing;
 // using Microsoft.Msagl.GraphViewerGdi;
 // using System.Windows.Media;
@@ -36,7 +37,7 @@ var position = new CoordinatePoint(0, 0);
 
 INpcRepository npcRepository = new NpcRepository();
 
-Npc npc = npcRepository.GetEnymyByKind(BoardGame.Model.NpcType.Creature);
+Npc npc = npcRepository.GetEnemyByKind(BoardGame.Model.NpcType.Creature);
 npc.Position = new CoordinatePoint(0, 0);
 
 var player = new Player(position);
@@ -113,3 +114,22 @@ builder.AddRight(node, til2.Id, til3);
 //         }
 //     }
 // }
+void PrintSpecialAll(SPECIAL special)
+{
+    System.Console.WriteLine("=================");
+    System.Console.WriteLine($"specail has S: {special.HasSPECIAL(SPECIALType.S)}");
+    System.Console.WriteLine($"specail has P: {special.HasSPECIAL(SPECIALType.P)}");
+    System.Console.WriteLine($"specail has E: {special.HasSPECIAL(SPECIALType.E)}");
+    System.Console.WriteLine($"specail has C: {special.HasSPECIAL(SPECIALType.C)}");
+    System.Console.WriteLine($"specail has I: {special.HasSPECIAL(SPECIALType.I)}");
+    System.Console.WriteLine($"specail has A: {special.HasSPECIAL(SPECIALType.A)}");
+    System.Console.WriteLine($"specail has L: {special.HasSPECIAL(SPECIALType.L)}");
+    System.Console.WriteLine("=================");
+}
+var special = new SPECIAL(SPECIALType.S);
+
+PrintSpecialAll(special);
+special.AddSpecial(SPECIALType.P);
+special.AddSpecial(SPECIALType.E);
+special.AddSpecial(SPECIALType.L);
+PrintSpecialAll(special);

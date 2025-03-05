@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BoardGame.Model.Player
+namespace BoardGame.Model
 {
     [Flags]
     public enum SPECIALType
@@ -14,6 +14,7 @@ namespace BoardGame.Model.Player
         E = 4,
         C = 8,
         I = 16,
-        A = 32
+        A = 32,
+        L = 64,
     }
 }

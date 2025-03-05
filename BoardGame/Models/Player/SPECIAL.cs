@@ -1,14 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BoardGame.Model.Player
+﻿namespace BoardGame.Model
 {
     public class SPECIAL
     {
         private SPECIALType _currentSpecial;
+        
+        public SPECIAL(SPECIALType currentSpecial)
+        {
+            _currentSpecial = currentSpecial;
+        }
+        
+        public void AddSpecial(SPECIALType currentSpecial){
+            _currentSpecial = _currentSpecial | currentSpecial;
+        }
+
         public bool HasSPECIAL(SPECIALType type)
         {
             return _currentSpecial.HasFlag(type);

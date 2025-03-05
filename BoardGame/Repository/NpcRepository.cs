@@ -257,7 +257,7 @@ namespace BoardGame.Repository
             },
         };
 
-        public Npc GetEnymyByKind(NpcType npcType)
+        public Npc GetEnemyByKind(NpcType npcType)
         {
             return _npcs.Where(x => x.EnemyType == npcType).First();
         }
