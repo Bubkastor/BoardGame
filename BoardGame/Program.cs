@@ -1,4 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using BoardGame.Builder;
 using BoardGame.Game.Fight;
 using BoardGame.Game.Scenario;
@@ -18,38 +21,6 @@ BuildNodeGraph builder = new BuildNodeGraph();
 //fill map
 PlayFieldTilRepository playFieldTilRepository = new PlayFieldTilRepository();
 
-//Map map =;
-StartScenario startScenario = new StartScenario();
-
-//for (int i = 0; i < startScenario.Map.Rank; i++)
-//{
-//    for (int j = 0; j < startScenario.Map.GetLength(i); j++)
-//    {
-//        var cell = startScenario.Map[i, j];
-//        if(cell.IdTil != 0)
-//        {
-//            var til = playFieldTilRepository.GetPlayFieldTilById(cell.IdTil);
-//        }
-//    }
-//}
-
-var position = new CoordinatePoint(0, 0);
-
-INpcRepository npcRepository = new NpcRepository();
-
-Npc npc = npcRepository.GetEnemyByKind(BoardGame.Model.NpcType.Creature);
-npc.Position = new CoordinatePoint(0, 0);
-
-var player = new Player(position);
-Fight fight = new Fight();
-
-var isWinFight = fight.IsWinFight(player, npc);
-Console.WriteLine(npc.ToString());
-Console.WriteLine($"Fight is win?: {isWinFight}");
-Console.WriteLine($"Player HP: {player.HP.CurrentHp}");
-
-
-
 var til = playFieldTilRepository.GetPlayFieldTilById(14);
 var til2 = playFieldTilRepository.GetPlayFieldTilById(2);
 var til3 = playFieldTilRepository.GetPlayFieldTilById(3);
@@ -58,6 +29,8 @@ til3.Visible = true;
 var node = builder.Create(til);
 builder.AddRight(node, til.Id, til2);
 builder.AddRight(node, til2.Id, til3);
+
+Console.WriteLine("mapString");
 
 
 //show View
@@ -114,22 +87,3 @@ builder.AddRight(node, til2.Id, til3);
 //         }
 //     }
 // }
-void PrintSpecialAll(SPECIAL special)
-{
-    System.Console.WriteLine("=================");
-    System.Console.WriteLine($"specail has S: {special.HasSPECIAL(SPECIALType.S)}");
-    System.Console.WriteLine($"specail has P: {special.HasSPECIAL(SPECIALType.P)}");
-    System.Console.WriteLine($"specail has E: {special.HasSPECIAL(SPECIALType.E)}");
-    System.Console.WriteLine($"specail has C: {special.HasSPECIAL(SPECIALType.C)}");
-    System.Console.WriteLine($"specail has I: {special.HasSPECIAL(SPECIALType.I)}");
-    System.Console.WriteLine($"specail has A: {special.HasSPECIAL(SPECIALType.A)}");
-    System.Console.WriteLine($"specail has L: {special.HasSPECIAL(SPECIALType.L)}");
-    System.Console.WriteLine("=================");
-}
-var special = new SPECIAL(SPECIALType.S);
-
-PrintSpecialAll(special);
-special.AddSpecial(SPECIALType.P);
-special.AddSpecial(SPECIALType.E);
-special.AddSpecial(SPECIALType.L);
-PrintSpecialAll(special);
