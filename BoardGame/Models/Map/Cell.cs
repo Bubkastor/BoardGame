@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace BoardGame.Models.Map
 {
-    internal class Cell
+    public class Cell
     {
         public int IdTil { get; set; }
         public TileType TileType { get; set; }
-        public Cell(int idTil)
+        public Cell(int idTil, TileType type = TileType.None)
         {
             IdTil = idTil;
+            TileType = type;
         }
         public Cell(TileType type) 
         { 

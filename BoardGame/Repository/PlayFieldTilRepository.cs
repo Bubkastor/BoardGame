@@ -1,5 +1,6 @@
 ﻿using BoardGame.Document;
 using BoardGame.Model;
+using BoardGame.Model.Map;
 using BoardGame.Model.Tiles;
 
 namespace BoardGame.Repository
@@ -544,7 +545,13 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 5,
-                        NeighborsNode = [ 2, 3, 4 ]
+                        NeighborsNode = [ 2, 3, 4 ],
+                        MeetType = MeetType.None,
+                        Meet = new Meet()
+                        {
+                            Lvl = 0,
+                            Name = "Лагерь на перекрёстке"
+                        }
                     }
                 },
             },
@@ -607,6 +614,15 @@ namespace BoardGame.Repository
                 Visible = true,
                 NodeProps = new List<NodeProp>()
                 {
+                    new NodeProp()
+                    {
+                        IdNode = 1,
+                        Meet = new Meet()
+                        {
+                            Lvl = 4,
+                            Name = "Молл"
+                        }
+                    }
                 },
             },
             new PlayFieldTil()
@@ -625,6 +641,15 @@ namespace BoardGame.Repository
                 Visible = true,
                 NodeProps = new List<NodeProp>()
                 {
+                    new NodeProp()
+                    {
+                        IdNode = 1,
+                        Meet = new Meet()
+                        {
+                            Lvl = 3,
+                            Name = "Мегатонна"
+                        }
+                    }
                 },
             },
             new PlayFieldTil()
@@ -706,6 +731,15 @@ namespace BoardGame.Repository
                 Visible = true,
                 NodeProps = new List<NodeProp>()
                 {
+                    new NodeProp()
+                    {
+                        IdNode = 1,
+                        Meet = new Meet()
+                        {
+                            Lvl = 4,
+                            Name = "Проект Чистота"
+                        }
+                    }
                 },
             },
             new PlayFieldTil()
