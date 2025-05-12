@@ -12,6 +12,6 @@ namespace BoardGame.Repository
         public List<PlayFieldTil> GetPlayFieldTils();
         public PlayFieldTil GetPlayFieldTilById(int id);
         public List<PlayFieldTil> GetPlayFieldTilByTileType(TileType tileType);
-
+        public string GetImgById(int id);
     }
 }

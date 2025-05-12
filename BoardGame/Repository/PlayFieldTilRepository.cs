@@ -13,6 +13,7 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 1,
+                Img = "Id1.png",
                 Type = TileType.Green,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -51,6 +52,7 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 2,
+                Img = "Id2.png",
                 Type = TileType.Green,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -95,6 +97,7 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 3,
+                Img = "Id3.png",
                 Type = TileType.Green,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -144,6 +147,7 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 4,
+                Img = "Id4.png",
                 Type = TileType.Green,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -193,6 +197,7 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 5,
+                Img = "Id5.png",
                 Type = TileType.Green,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -243,6 +248,7 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 6,
+                Img = "Id6.png",
                 Type = TileType.Green,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -290,6 +296,7 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 7,
+                Img = "Id7.png",
                 Type = TileType.Green,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -340,6 +347,7 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 8,
+                Img = "Id8.png",
                 Type = TileType.Green,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -383,6 +391,7 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 8, // red_1
+                Img = "Red_1.png",
                 Type = TileType.Red,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -427,6 +436,7 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 9, // red_2
+                Img = "Red_2.png",
                 Type = TileType.Red,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -469,6 +479,7 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 10, // red_3
+                Img = "Red_3.png",
                 Type = TileType.Red,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -519,6 +530,7 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 11, // red_4
+                Img = "Red_4.png",
                 Type = TileType.Red,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -568,6 +580,7 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 12, // red_5
+                Img = "Red_5.png",
                 Type = TileType.Red,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -619,6 +632,7 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 13, // red_6
+                Img = "Red_6.png",
                 Type = TileType.Red,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -659,6 +673,7 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 14, // star_1
+                Img = "Star_1.png",
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
@@ -712,6 +727,7 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 15, // star_2
+                Img = "Star_2.png",
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
@@ -773,6 +789,7 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 16, // star_2_1
+                Img = "Star_2_1.png",
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
@@ -800,6 +817,7 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 18, // star_3_1
+                Img = "Star_3_1.png",
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
@@ -818,6 +836,7 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 19, // star_3_2
+                Img = "Star_3_2.png",
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
@@ -865,6 +884,7 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 20, // star_4_1
+                Img = "Star_4_1.png",
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
@@ -915,6 +935,7 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 21, // star_4_2
+                Img = "Star_4_2.png",
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
@@ -933,61 +954,115 @@ namespace BoardGame.Repository
             new PlayFieldTil()
             {
                 Id = 22, // star_5_1
+                Img = "Star_5_1.png",
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
                 {
-                    // ядро
+                    new NodeProp()
+                    {
+                        IdNode = 1,
+                        Meet = new Meet()
+                        {
+                            Lvl = 4,
+                            Name = "Ядро"
+                        }
+                    }
                 },
             },
             new PlayFieldTil()
             {
                 Id = 23, // star_5_2
+                Img = "Star_5_2.png",
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
                 {
-                    // завод
+                    new NodeProp()
+                    {
+                        IdNode = 1,
+                        Meet = new Meet()
+                        {
+                            Lvl = 4,
+                            Name = "Завод"
+                        }
+                    }
                 },
             },
             new PlayFieldTil()
             {
                 Id = 24, // star_6_1
+                Img = "Star_6_1.png",
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
                 {
-                    // мост
+                    new NodeProp()
+                    {
+                        IdNode = 1,
+                        Meet = new Meet()
+                        {
+                            Lvl = 4,
+                            Name = "Мост"
+                        }
+                    }
                 },
             },
             new PlayFieldTil()
             {
                 Id = 25, // star_6_2
+                Img = "Star_6_2.png",
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
                 {
-                    // акадия
+                    new NodeProp()
+                    {
+                        IdNode = 1,
+                        Meet = new Meet()
+                        {
+                            Lvl = 4,
+                            Name = "Акадия"
+                        }
+                    }
                 },
             },
             new PlayFieldTil()
             {
                 Id = 26, // star_7_1
+                Img = "Star_7_1.png",
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
                 {
-                    // крепость
+                    new NodeProp()
+                    {
+                        IdNode = 1,
+                        Meet = new Meet()
+                        {
+                            Lvl = 4,
+                            Name = "Крепость"
+                        }
+                    }
                 },
             },
             new PlayFieldTil()
             {
                 Id = 27, // star_7_2
+                Img = "Star_7_2.png",
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
                 {
-                    //Фар харбор
+                    new NodeProp()
+                    {
+                        IdNode = 1,
+                        Meet = new Meet()
+                        {
+                            Lvl = 4,
+                            Name = "Фар-Харбор"
+                        }
+                    }
                 },
             }
         };
@@ -1000,6 +1075,11 @@ namespace BoardGame.Repository
         public List<PlayFieldTil> GetPlayFieldTilByTileType(TileType tileType)
         {
             return _playFieldTils.Where(x => x.Type == tileType).ToList();
+        }
+
+        public string GetImgById(int id)
+        {
+            return _playFieldTils.First(x => x.Id == id).Img;
         }
 
         public List<PlayFieldTil> GetPlayFieldTils()

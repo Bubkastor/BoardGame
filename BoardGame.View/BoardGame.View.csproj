@@ -10,4 +10,35 @@
     <ProjectReference Include="..\BoardGame\BoardGame.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\img\Tils\Id1.png" />
+    <None Include="wwwroot\img\Tils\Id2.png" />
+    <None Include="wwwroot\img\Tils\Id3.png" />
+    <None Include="wwwroot\img\Tils\Id4.png" />
+    <None Include="wwwroot\img\Tils\Id5.png" />
+    <None Include="wwwroot\img\Tils\Id6.png" />
+    <None Include="wwwroot\img\Tils\Id7.png" />
+    <None Include="wwwroot\img\Tils\Id8.png" />
+    <None Include="wwwroot\img\Tils\Red.psd" />
+    <None Include="wwwroot\img\Tils\Red_1.png" />
+    <None Include="wwwroot\img\Tils\Red_2.png" />
+    <None Include="wwwroot\img\Tils\Red_3.png" />
+    <None Include="wwwroot\img\Tils\Red_4.png" />
+    <None Include="wwwroot\img\Tils\Red_5.png" />
+    <None Include="wwwroot\img\Tils\Red_6.png" />
+    <None Include="wwwroot\img\Tils\Star_1.png" />
+    <None Include="wwwroot\img\Tils\Star_2.png" />
+    <None Include="wwwroot\img\Tils\Star_2_1.png" />
+    <None Include="wwwroot\img\Tils\Star_3_1.png" />
+    <None Include="wwwroot\img\Tils\Star_3_2.png" />
+    <None Include="wwwroot\img\Tils\Star_4_1.png" />
+    <None Include="wwwroot\img\Tils\Star_4_2.png" />
+    <None Include="wwwroot\img\Tils\Star_5_1.png" />
+    <None Include="wwwroot\img\Tils\Star_5_2.png" />
+    <None Include="wwwroot\img\Tils\Star_6_1.png" />
+    <None Include="wwwroot\img\Tils\Star_6_2.png" />
+    <None Include="wwwroot\img\Tils\Star_7_1.png" />
+    <None Include="wwwroot\img\Tils\Star_7_2.png" />
+  </ItemGroup>
+
 </Project>

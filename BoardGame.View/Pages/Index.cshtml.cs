@@ -1,5 +1,6 @@
 using BoardGame.Game.Scenario;
 using BoardGame.Model.Tiles;
+using BoardGame.Models.Map;
 using BoardGame.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -9,7 +10,7 @@ namespace BoardGame.View.Pages;
 public class IndexModel : PageModel
 {
     private readonly ILogger<IndexModel> _logger;
-    public StartScenario _startScenario = new StartScenario();
+    public IStartScenario _startScenario = new StartScenario();
     public IPlayFieldTilRepository _repo = new PlayFieldTilRepository();
 
     public IndexModel(ILogger<IndexModel> logger)
@@ -19,7 +20,6 @@ public class IndexModel : PageModel
 
     public void OnGet()
     {
-
     }
 
     public string GetTilColor(TileType tileType)
@@ -31,6 +31,28 @@ public class IndexModel : PageModel
         if (tileType == TileType.Start)
             return "start";
         return "";
+    }
 
+    public string GetImg(Cell cell)
+    {
+        if (cell.IdTil != 0)
+        {
+            return _repo.GetImgById(cell.IdTil);
+        }
+
+        if (cell.TileType != TileType.None)
+        {
+            if (cell.TileType == TileType.Red)
+            {
+                return "red.png";
+            }
+
+            if (cell.TileType == TileType.Green)
+            {
+                return "green.png";
+            }
+        }
+
+        return "";
     }
 }
