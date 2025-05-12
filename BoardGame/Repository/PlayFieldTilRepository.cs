@@ -21,19 +21,30 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         NpcType = NpcType.Creature,
-                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE,TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.TOP_LEFT_SIDE,TileSide.TOP_LEFT_SIDE_V2, 2, 3]
-
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE,
+                            TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, 2, 3
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
-                        NeighborsNode = [ TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE,TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 1, 3]
+                        NeighborsNode =
+                        [
+                            TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE,
+                            TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 1, 3
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        NeighborsNode = [ TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE,TileSide.LEFT_SIDE_V2, TileSide.TOP_LEFT_SIDE_V2, 1, 2]
+                        NeighborsNode =
+                        [
+                            TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE,
+                            TileSide.LEFT_SIDE_V2, TileSide.TOP_LEFT_SIDE_V2, 1, 2
+                        ]
                     }
                 }
             },
@@ -48,12 +59,16 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         NpcType = NpcType.Creature,
-                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.TOP_LEFT_SIDE,TileSide.TOP_LEFT_SIDE_V2, 2, 3, 4]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_RIGHT_SIDE, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.TOP_LEFT_SIDE,
+                            TileSide.TOP_LEFT_SIDE_V2, 2, 3, 4
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
-                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE,TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, 1, 3]
+                        NeighborsNode = [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, 1, 3]
                     },
                     new NodeProp()
                     {
@@ -64,12 +79,16 @@ namespace BoardGame.Repository
                             Name = "Эшбери-Роуд",
                             Lvl = 1
                         },
-                        NeighborsNode = [ TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 2, 4 ]
+                        NeighborsNode = [TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 2, 4]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
-                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 3 ]
+                        NeighborsNode =
+                        [
+                            TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE,
+                            TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 3
+                        ]
                     }
                 }
             },
@@ -83,19 +102,31 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 1,
-                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE,TileSide.TOP_RIGHT_SIDE_V2, TileSide.TOP_LEFT_SIDE, TileSide.RIGHT_SIDE, 2 ]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.TOP_LEFT_SIDE,
+                            TileSide.RIGHT_SIDE, 2
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         NpcType = NpcType.Human,
-                        NeighborsNode = [ TileSide.TOP_LEFT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_LEFT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2,
+                            TileSide.BOTTOM_RIGHT_SIDE, 1, 3, 4
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 2, 4 ]
+                        NeighborsNode =
+                        [
+                            TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE,
+                            TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 2, 4
+                        ]
                     },
                     new NodeProp()
                     {
@@ -106,7 +137,7 @@ namespace BoardGame.Repository
                             Name = "Заправка Красная ракет",
                             Lvl = 2,
                         },
-                        NeighborsNode = [ TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, 2, 3 ]
+                        NeighborsNode = [TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, 2, 3]
                     }
                 }
             },
@@ -120,18 +151,30 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 1,
-                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.RIGHT_SIDE, 2, 3, 4]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.TOP_LEFT_SIDE,
+                            TileSide.TOP_LEFT_SIDE_V2, TileSide.RIGHT_SIDE, 2, 3, 4
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        NeighborsNode = [ TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2,TileSide.BOTTOM_LEFT_SIDE_V2, 1, 3, 4]
+                        NeighborsNode =
+                        [
+                            TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE,
+                            TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 1, 3, 4
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        NeighborsNode = [ TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE,TileSide.LEFT_SIDE_V2,TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, 1, 2, 4 ]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2,
+                            TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, 1, 2, 4
+                        ]
                     },
                     new NodeProp()
                     {
@@ -143,7 +186,7 @@ namespace BoardGame.Repository
                             Name = "Лагерь Рейдоров",
                             Lvl = 3
                         },
-                        NeighborsNode = [ 1, 2, 3 ]
+                        NeighborsNode = [1, 2, 3]
                     }
                 }
             },
@@ -164,23 +207,36 @@ namespace BoardGame.Repository
                             Name = "Супермакрет",
                             Lvl = 2
                         },
-                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, 2, 3, 4]
+                        NeighborsNode =
+                            [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, 2, 3, 4]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
-                        NeighborsNode = [TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.RIGHT_SIDE,
+                            TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 1, 2, 4 ]
+                        NeighborsNode =
+                        [
+                            TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 1,
+                            2, 4
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
                         NpcType = NpcType.Human,
-                        NeighborsNode = [ TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.TOP_LEFT_SIDE_V2, 1, 3 ]
+                        NeighborsNode =
+                        [
+                            TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE,
+                            TileSide.LEFT_SIDE_V2, TileSide.TOP_LEFT_SIDE_V2, 1, 3
+                        ]
                     }
                 }
             },
@@ -195,13 +251,22 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE,TileSide.LEFT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, 2, 3]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2,
+                            TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE,
+                            TileSide.BOTTOM_LEFT_SIDE_V2, 2, 3
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
 
-                        NeighborsNode = [TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.RIGHT_SIDE,
+                            TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3
+                        ]
                     },
                     new NodeProp()
                     {
@@ -209,12 +274,16 @@ namespace BoardGame.Repository
 
                         MeetType = MeetType.Settlement,
 
-                         Meet = new Meet()
+                        Meet = new Meet()
                         {
                             Name = "Ферма Хофмана",
                             Lvl = 2
                         },
-                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 1, 2 ]
+                        NeighborsNode =
+                        [
+                            TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 1,
+                            2
+                        ]
                     }
                 }
             },
@@ -229,7 +298,7 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE, 2, 3]
+                        NeighborsNode = [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE, 2, 3]
                     },
                     new NodeProp()
                     {
@@ -246,19 +315,25 @@ namespace BoardGame.Repository
                             Name = "Шоссе 74",
                             Lvl = 1
                         },
-                        NeighborsNode = [ TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 2, 4, 5 ]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.RIGHT_SIDE,
+                            TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 2, 4, 5
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.LEFT_SIDE_V2, 2, 5 ]
+                        NeighborsNode =
+                            [TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.LEFT_SIDE_V2, 2, 5]
                     },
                     new NodeProp()
                     {
                         IdNode = 5,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 4, 3 ]
+                        NeighborsNode =
+                            [TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 4, 3]
                     },
                 },
             },
@@ -273,32 +348,34 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         NpcType = NpcType.Creature,
-                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, 2, 3, 4, 5 ]
+                        NeighborsNode =
+                            [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, 2, 3, 4, 5]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        NeighborsNode = [TileSide.TOP_RIGHT_SIDE,TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, 1, 3 ]
+                        NeighborsNode = [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, 1, 3]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        NeighborsNode = [ TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 2 ]
+                        NeighborsNode = [TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 2]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        NeighborsNode = [TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 5 ]
+                        NeighborsNode =
+                            [TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 5]
                     },
                     new NodeProp()
                     {
                         IdNode = 5,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
                         MeetType = MeetType.Vault84,
-                        NeighborsNode = [TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.TOP_LEFT_SIDE_V2, 1, 4 ]
+                        NeighborsNode = [TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.TOP_LEFT_SIDE_V2, 1, 4]
                     },
                 },
             },
@@ -314,32 +391,42 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, 2, 4 ]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2,
+                            TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, 2, 4
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         MeetType = MeetType.Wasteland,
                         NpcType = NpcType.SuperMutant,
-                        NeighborsNode = [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.RIGHT_SIDE, 1, 3, 4 ]
+                        NeighborsNode =
+                            [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.RIGHT_SIDE, 1, 3, 4]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [ TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2 , 2, 4 ]
+                        NeighborsNode =
+                        [
+                            TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE,
+                            TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 2, 4
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE, TileSide.LEFT_SIDE_V2, 1,2,3 ]
+                        NeighborsNode =
+                            [TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE, TileSide.LEFT_SIDE_V2, 1, 2, 3]
                     }
                 },
             },
             new PlayFieldTil()
             {
-                Id = 9,// red_2
+                Id = 9, // red_2
                 Type = TileType.Red,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -348,31 +435,40 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.TOP_LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 2, 3 ]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.TOP_LEFT_SIDE,
+                            TileSide.LEFT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2,
+                            TileSide.BOTTOM_RIGHT_SIDE, 2, 3
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         NpcType = NpcType.SuperMutant,
-                        NeighborsNode = [TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 3 ]
+                        NeighborsNode =
+                        [
+                            TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE,
+                            TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 3
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        NeighborsNode = [ TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, 1, 2, 4 ]
+                        NeighborsNode = [TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, 1, 2, 4]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
                         MeetType = MeetType.Vault109,
-                        NeighborsNode = [ 3 ]
+                        NeighborsNode = [3]
                     }
                 },
             },
             new PlayFieldTil()
             {
-                Id = 10,// red_3
+                Id = 10, // red_3
                 Type = TileType.Red,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -381,19 +477,31 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [ TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.TOP_RIGHT_SIDE, 2, 3, 4 ]
+                        NeighborsNode =
+                        [
+                            TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.TOP_LEFT_SIDE,
+                            TileSide.TOP_LEFT_SIDE_V2, TileSide.TOP_RIGHT_SIDE, 2, 3, 4
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE,
+                            TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3, 4
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
                         NpcType = NpcType.Robot,
-                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2,  1, 2, 4 ]
+                        NeighborsNode =
+                        [
+                            TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE,
+                            TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 2, 4
+                        ]
                     },
                     new NodeProp()
                     {
@@ -404,13 +512,13 @@ namespace BoardGame.Repository
                             Lvl = 3,
                             Name = "Фабрика Робко"
                         },
-                        NeighborsNode = [ 1,2,3 ]
+                        NeighborsNode = [1, 2, 3]
                     }
                 },
             },
             new PlayFieldTil()
             {
-                Id = 11,// red_4
+                Id = 11, // red_4
                 Type = TileType.Red,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -419,18 +527,30 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        NeighborsNode = [ TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.RIGHT_SIDE, 2, 3, 4 ]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.TOP_RIGHT_SIDE,
+                            TileSide.TOP_LEFT_SIDE_V2, TileSide.RIGHT_SIDE, 2, 3, 4
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         NpcType = NpcType.Monster,
-                        NeighborsNode = [ TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 1, 3 ]
+                        NeighborsNode =
+                        [
+                            TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE,
+                            TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 1, 3
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        NeighborsNode = [ TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, 1, 2 ]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2,
+                            TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, 1, 2
+                        ]
                     },
                     new NodeProp()
                     {
@@ -441,13 +561,13 @@ namespace BoardGame.Repository
                             Lvl = 3,
                             Name = "Поместье Пендлтон"
                         },
-                        NeighborsNode = [ 1 ]
+                        NeighborsNode = [1]
                     }
                 },
             },
             new PlayFieldTil()
             {
-                Id = 12,// red_5
+                Id = 12, // red_5
                 Type = TileType.Red,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -456,17 +576,26 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         NpcType = NpcType.Human,
-                        NeighborsNode = [ TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.TOP_RIGHT_SIDE , 2, 4, 5 ]
+                        NeighborsNode =
+                            [TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.TOP_RIGHT_SIDE, 2, 4, 5]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
-                        NeighborsNode = [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE,
+                            TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3, 4
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 2, 4 ]
+                        NeighborsNode =
+                        [
+                            TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 2,
+                            4
+                        ]
                     },
                     new NodeProp()
                     {
@@ -477,18 +606,19 @@ namespace BoardGame.Repository
                             Lvl = 3,
                             Name = "Башня"
                         },
-                        NeighborsNode = [ TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 2, 3, 5 ]
+                        NeighborsNode =
+                            [TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 2, 3, 5]
                     },
                     new NodeProp()
                     {
                         IdNode = 5,
-                        NeighborsNode = [ TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.TOP_LEFT_SIDE_V2, 1, 4 ]
+                        NeighborsNode = [TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.TOP_LEFT_SIDE_V2, 1, 4]
                     }
                 },
             },
             new PlayFieldTil()
             {
-                Id = 13,// red_6
+                Id = 13, // red_6
                 Type = TileType.Red,
                 Visible = false,
                 NodeProps = new List<NodeProp>()
@@ -497,26 +627,38 @@ namespace BoardGame.Repository
                     {
                         IdNode = 1,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, 2, 3 ]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2,
+                            TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, 2, 3
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3 ]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE,
+                            TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
                         DifficultyAreaType = DifficultyAreaType.Radiation,
-                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 2 ]
+                        NeighborsNode =
+                        [
+                            TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE,
+                            TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 2
+                        ]
                     }
                 },
             },
             // star
             new PlayFieldTil()
             {
-                Id = 14,// star_1
+                Id = 14, // star_1
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
@@ -524,28 +666,40 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 1,
-                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, 2, 4, 3 ]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2,
+                            TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, 2, 4, 3
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
-                        NeighborsNode = [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3, 4, 5 ]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE,
+                            TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3, 4, 5
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 2, 4 ,5 ]
+                        NeighborsNode =
+                        [
+                            TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE,
+                            TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 2, 4, 5
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        NeighborsNode = [ 1, 2, 3 ,5 ]
+                        NeighborsNode = [1, 2, 3, 5]
                     },
                     new NodeProp()
                     {
                         IdNode = 5,
-                        NeighborsNode = [ 2, 3, 4 ],
+                        NeighborsNode = [2, 3, 4],
                         MeetType = MeetType.None,
                         Meet = new Meet()
                         {
@@ -555,9 +709,9 @@ namespace BoardGame.Repository
                     }
                 },
             },
-             new PlayFieldTil()
+            new PlayFieldTil()
             {
-                Id = 15,// star_2
+                Id = 15, // star_2
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
@@ -571,23 +725,29 @@ namespace BoardGame.Repository
                             Lvl = 3,
                             Name = "Подземка"
                         },
-                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, 2 ]
+                        NeighborsNode = [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, 2]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
                         NpcType = NpcType.SuperMutant,
-                        NeighborsNode = [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, 1, 3, 5, 6 ]
+                        NeighborsNode =
+                            [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, 1, 3, 5, 6]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        NeighborsNode = [ TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 2, 4 ,5 ]
+                        NeighborsNode =
+                            [TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 2, 4, 5]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
-                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 3, 5]
+                        NeighborsNode =
+                        [
+                            TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 3,
+                            5
+                        ]
                     },
                     new NodeProp()
                     {
@@ -598,18 +758,21 @@ namespace BoardGame.Repository
                             Lvl = 4,
                             Name = "Центральный Бостон"
                         },
-                        NeighborsNode = [TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, TileSide.LEFT_SIDE_V2, 2, 3, 4, 6 ]
+                        NeighborsNode =
+                        [
+                            TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, TileSide.LEFT_SIDE_V2, 2, 3, 4, 6
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 6,
-                        NeighborsNode = [TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.TOP_LEFT_SIDE_V2, 1, 2, 5 ]
+                        NeighborsNode = [TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.TOP_LEFT_SIDE_V2, 1, 2, 5]
                     }
                 },
             },
             new PlayFieldTil()
             {
-                Id = 16,// star_2_1
+                Id = 16, // star_2_1
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
@@ -627,7 +790,7 @@ namespace BoardGame.Repository
             },
             new PlayFieldTil()
             {
-                Id = 17,// star_2_2
+                Id = 17, // star_2_2
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
@@ -636,7 +799,7 @@ namespace BoardGame.Repository
             },
             new PlayFieldTil()
             {
-                Id = 18,// star_3_1
+                Id = 18, // star_3_1
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
@@ -654,7 +817,7 @@ namespace BoardGame.Repository
             },
             new PlayFieldTil()
             {
-                Id = 19,// star_3_2
+                Id = 19, // star_3_2
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
@@ -662,17 +825,29 @@ namespace BoardGame.Repository
                     new NodeProp()
                     {
                         IdNode = 1,
-                        NeighborsNode = [ TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2 , 2, 3, 4 ]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_RIGHT_SIDE, TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2,
+                            TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, 2, 3, 4
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
-                        NeighborsNode = [TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE,
+                            TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3, 4
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
-                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 2, 4 ]
+                        NeighborsNode =
+                        [
+                            TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE,
+                            TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 1, 2, 4
+                        ]
                     },
                     new NodeProp()
                     {
@@ -683,13 +858,13 @@ namespace BoardGame.Repository
                             Lvl = 4,
                             Name = "Даймон Сити"
                         },
-                        NeighborsNode = [ 1, 2, 3]
+                        NeighborsNode = [1, 2, 3]
                     },
                 },
             },
             new PlayFieldTil()
             {
-                Id = 20,// star_4_1
+                Id = 20, // star_4_1
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
@@ -704,29 +879,42 @@ namespace BoardGame.Repository
                             Lvl = 4,
                             Name = "Руины тис"
                         },
-                        NeighborsNode = [ TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2,TileSide.TOP_RIGHT_SIDE, TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, 2 ]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_LEFT_SIDE, TileSide.TOP_LEFT_SIDE_V2, TileSide.TOP_RIGHT_SIDE,
+                            TileSide.TOP_RIGHT_SIDE_V2, TileSide.RIGHT_SIDE, 2
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 2,
-                        NeighborsNode = [TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.RIGHT_SIDE, TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3, 4 ]
+                        NeighborsNode =
+                        [
+                            TileSide.TOP_LEFT_SIDE_V2, TileSide.LEFT_SIDE, TileSide.LEFT_SIDE_V2, TileSide.RIGHT_SIDE,
+                            TileSide.RIGHT_SIDE_V2, TileSide.BOTTOM_RIGHT_SIDE, 1, 3, 4
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 3,
                         DifficultyAreaType = DifficultyAreaType.Crossed,
-                        NeighborsNode = [ TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 2, 4 ]
+                        NeighborsNode =
+                        [
+                            TileSide.BOTTOM_RIGHT_SIDE, TileSide.BOTTOM_RIGHT_SIDE_V2, TileSide.BOTTOM_LEFT_SIDE_V2, 2,
+                            4
+                        ]
                     },
                     new NodeProp()
                     {
                         IdNode = 4,
-                        NeighborsNode = [TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 2, 3]
+                        NeighborsNode =
+                            [TileSide.BOTTOM_LEFT_SIDE, TileSide.BOTTOM_LEFT_SIDE_V2, TileSide.LEFT_SIDE_V2, 2, 3]
                     },
                 },
             },
             new PlayFieldTil()
             {
-                Id = 21,// star_4_2
+                Id = 21, // star_4_2
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
@@ -744,59 +932,66 @@ namespace BoardGame.Repository
             },
             new PlayFieldTil()
             {
-                Id = 22,// star_5_1
+                Id = 22, // star_5_1
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
                 {
+                    // ядро
                 },
             },
             new PlayFieldTil()
             {
-                Id = 23,// star_5_2
+                Id = 23, // star_5_2
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
                 {
+                    // завод
                 },
             },
             new PlayFieldTil()
             {
-                Id = 24,// star_6_1
+                Id = 24, // star_6_1
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
                 {
+                    // мост
                 },
             },
             new PlayFieldTil()
             {
-                Id = 25,// star_6_2
+                Id = 25, // star_6_2
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
                 {
+                    // акадия
                 },
             },
             new PlayFieldTil()
             {
-                Id = 26,// star_7_1
+                Id = 26, // star_7_1
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
                 {
+                    // крепость
                 },
             },
             new PlayFieldTil()
             {
-                Id = 27,// star_7_2
+                Id = 27, // star_7_2
                 Type = TileType.Start,
                 Visible = true,
                 NodeProps = new List<NodeProp>()
                 {
+                    //Фар харбор
                 },
             }
         };
+
         public PlayFieldTil GetPlayFieldTilById(int id)
         {
             return _playFieldTils.Where(x => x.Id == id).First();

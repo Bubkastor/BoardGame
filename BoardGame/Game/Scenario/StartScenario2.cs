@@ -9,27 +9,18 @@ using System.Threading.Tasks;
 
 namespace BoardGame.Game.Scenario
 {
-    public class StartScenario : IStartScenario
+    public class StartScenario2 : IStartScenario
     {
-        public StartScenario()
+        public StartScenario2()
         {
             
         }
 
         public List<List<Cell>> Map => _map;
-        public string Name => "Содружество";
+        public string Name => "Столичная пустошь";
 
-        // Содружество
-        private List<List<Cell>> _map = new List<List<Cell>>()
-        {
-            new List<Cell>(){ new Cell(14, TileType.Start),  new Cell(TileType.Green), new Cell(TileType.Green), new Cell(TileType.Red), new Cell(TileType.Red) },
-            new List<Cell>(){ new Cell(TileType.Green), new Cell(TileType.Green), new Cell(20), new Cell(TileType.Red) },
-            new List<Cell>(){ new Cell(TileType.Green), new Cell(TileType.Green), new Cell(19), new Cell(TileType.Red),  new Cell(TileType.Red) },
-            new List<Cell>(){ new Cell(TileType.Green), new Cell(TileType.Green), new Cell(TileType.Red),  new Cell(15) },
-        };
-        
         // Столичная пустошь
-        public List<List<Cell>> Map2 = new List<List<Cell>>()
+        private List<List<Cell>> _map = new List<List<Cell>>()
         {
             new List<Cell>(){new Cell(14, TileType.Start), new Cell(TileType.Green), new Cell(TileType.Green), new Cell(TileType.Green) },
             new List<Cell>(){new Cell(TileType.Green),new Cell(TileType.Green),new Cell(TileType.Green)},
