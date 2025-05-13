@@ -4,66 +4,76 @@
 @{
     ViewData["Title"] = "Home page";
 }
-<h3>@Model._startScenario.Name</h3>
 <div class="playBoard">
     @{
-        var items = Model._startScenario.Map;
-        var lineCount = 0;
+        var items = Model._maps;
+        if (items == null)
+            return;
+
+        var row = 0;
         foreach (var line in items)
         {
             <div class="customRow">
-            @if (lineCount % 2 == 1)
-            {
-                <div class="emptyTill"></div>
-            }
-            @foreach (var tilCell in line)
-            {
-                <div class="till @Model.GetTilColor(tilCell.TileType)">
-                    @if (tilCell.IdTil != 0)
-                    {
-                        var til = Model._repo.GetPlayFieldTilById(tilCell.IdTil);
-                        var names = til.NodeProps.Where(x => x.Meet != null)
-                            .Select(x => x.Meet.Name)
-                            .ToList();
-                        @string.Join(',', names);
-                    }
-                    <img class="img" src="/img/Tils/@Model.GetImg(tilCell)"/>
-                                                                                       </div>
-            }
+                @if (row % 2 == 1)
+                {
+                    <div class="emptyTill"></div>
+                }
+                @{
+                    var col = 0;
+                }
+                @foreach (var cell in line)
+                {
+                    <div class="till @Model.GetTilColor(cell.TileType)" onclick="@Model.TurnCell(row, col)">
+                        @if (cell.IdTil != 0)
+                        {
+                            var til = Model._repo.GetPlayFieldTilById(cell.IdTil);
+                            var names = til.NodeProps.Where(x => x.Meet != null)
+                                .Select(x => x.Meet.Name)
+                                .ToList();
+                                @string.Join(',', names);
+                                col += 1;
+                        }
+                        <img class="img" src="/img/Tils/@Model.GetImg(cell)" />
+                    </div>
+                }
 
-            @{
-                lineCount += 1;
-            }
+                @{
+                    row += 1;
+                }
             </div>
         }
     }
-    
+
 </div>
 <style>
-    .playBoard{
+    .playBoard {
         display: flex;
         flex-direction: column;
         flex: 0 0;
     }
-    .customRow{
+
+    .customRow {
         display: flex;
         flex-direction: row;
         flex: 0 0;
     }
-    .emptyTill{
+
+    .emptyTill {
         width: 150px;
         height: 300px;
     }
-    .till{
+
+    .till {
         width: 300px;
         height: 300px;
         position: relative;
     }
-    .img{
+
+    .img {
         width: 100%;
         height: 100%;
     }
-    .till.id{
+
+    .till.id {
     }
-    
 </style>
