@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\img\Tils\green.png" />
     <None Include="wwwroot\img\Tils\Id1.png" />
     <None Include="wwwroot\img\Tils\Id2.png" />
     <None Include="wwwroot\img\Tils\Id3.png" />
@@ -19,6 +20,7 @@
     <None Include="wwwroot\img\Tils\Id6.png" />
     <None Include="wwwroot\img\Tils\Id7.png" />
     <None Include="wwwroot\img\Tils\Id8.png" />
+    <None Include="wwwroot\img\Tils\red.png" />
     <None Include="wwwroot\img\Tils\Red.psd" />
     <None Include="wwwroot\img\Tils\Red_1.png" />
     <None Include="wwwroot\img\Tils\Red_2.png" />

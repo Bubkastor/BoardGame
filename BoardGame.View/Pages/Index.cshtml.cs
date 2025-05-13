@@ -44,12 +44,12 @@ public class IndexModel : PageModel
         {
             if (cell.TileType == TileType.Red)
             {
-                return "red.png";
+                return "Red.png";
             }
 
             if (cell.TileType == TileType.Green)
             {
-                return "green.png";
+                return "Green.png";
             }
         }
 
