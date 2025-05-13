@@ -8,8 +8,7 @@ namespace BoardGame.Api.Controllers;
 [Route("api/[controller]")]
 public class PlayerController(
     IGameStateRepository gameStateRepository,
-    IPlayFieldTilRepository playFieldTilRepository
-) : Controller
+    IPlayFieldTilRepository playFieldTilRepository) : Controller
 {
     [HttpPost]
     public void TurnCell(int idGame, int row, int col)
@@ -31,8 +30,8 @@ public class PlayerController(
         var tillsByType = playFieldTilRepository.GetPlayFieldTilByTileType(cell.TileType);
         tillsByType.RemoveAll(x => existTilsType.Contains(x.Id));
         var random = new Random();
-        var newTil = tillsByType[random.Next(0, tillsByType.Count+1)];
-        
+        var newTil = tillsByType[random.Next(0, tillsByType.Count + 1)];
+
         gameState.Map[row][col].IdTil = newTil.Id;
         gameStateRepository.UpdateGameState(idGame, gameState);
     }
