@@ -17,10 +17,13 @@ public partial class Playfield
     {
         try
         {
-            var id = await _apiClient.GameAsync();
-            var gameState = await _apiClient.GameAllAsync(id);
-            _maps = gameState;
-            IsLoad = true;
+            var response = await _apiClient.GameGETAsync();
+            var gameState = await _apiClient.GamePOSTAsync(response.IdGame);
+            if (gameState.Map != null)
+            {
+                _maps = gameState.Map;
+                IsLoad = true;
+            }
         }
         catch (Exception ex)
         {
@@ -66,8 +69,9 @@ public partial class Playfield
     public async Task TurnCell(int row, int col)
     {
         await _apiClient.PlayerAsync(1, row, col);
-        var id = await _apiClient.GameAsync();
-        var gameState = await _apiClient.GameAllAsync(id);
-        _maps = gameState;
+        var response = await _apiClient.GameGETAsync();
+        var gameState = await _apiClient.GamePOSTAsync(response.IdGame);
+        if (gameState.Map != null)
+            _maps = gameState.Map;
     }
 }

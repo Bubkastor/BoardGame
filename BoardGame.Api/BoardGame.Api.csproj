@@ -7,14 +7,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.1"/>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.1" />
         <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="8.1.1" />
         <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="8.1.1" />
         <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="8.1.1" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\BoardGame\BoardGame.csproj" />
+      <ProjectReference Include="..\BoardGame.Application\BoardGame.Application.csproj" />
+      <ProjectReference Include="..\BoardGame\BoardGame.Models.csproj" />
     </ItemGroup>
 
 </Project>

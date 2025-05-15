@@ -1,44 +1,24 @@
 using BoardGame.Model.Map;
+using BoardGame.Models.Mediator.Commands;
 using BoardGame.Repository;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BoardGame.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class PlayerController(
-    IGameStateRepository gameStateRepository,
-    IPlayFieldTilRepository playFieldTilRepository) : Controller
+public class PlayerController(IMediator mediator) : Controller
 {
     [HttpPost]
-    public void TurnCell(int idGame, int row, int col)
+    public async Task<TurnCellCommandResult> TurnCell(int idGame, int row, int col)
     {
-        var gameState = gameStateRepository.GetGameState(idGame);
-        if (gameState == null)
+        var command = new TurnCellCommand
         {
-            throw new ArgumentNullException();
-        }
-
-        var cell = gameState.Map[row][col];
-        var existTilsType = gameState.Map
-            .SelectMany(r => r)
-            .Where(c => c.TileType == cell.TileType)
-            .Select(x => x.IdTil)
-            .Distinct()
-            .ToList();
-
-        var tillsByType = playFieldTilRepository.GetPlayFieldTilByTileType(cell.TileType);
-      
-
-        tillsByType.RemoveAll(x => existTilsType.Contains(x.Id));
-        if (tillsByType.Count == 0)
-        {
-            return;
-        }
-        var random = new Random();
-        var newTil = tillsByType[random.Next(0, tillsByType.Count)];
-
-        gameState.Map[row][col].IdTil = newTil.Id;
-        gameStateRepository.UpdateGameState(idGame, gameState);
+            IdGame = idGame,
+            Col = col,
+            Row = row
+        };
+        return await mediator.Send(command);
     }
 }

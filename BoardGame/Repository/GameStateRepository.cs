@@ -10,11 +10,11 @@ public class GameStateRepository : IGameStateRepository
         _gameStates.TryAdd(id, gameState);
     }
 
-    public GameState? GetGameState(int id)
+    public async Task<GameState?> GetGameStateAsync(int id)
     {
         if(_gameStates.TryGetValue(id, out var state))
         {
-            return state;
+            return await Task.FromResult(state);
         }
 
         return null;

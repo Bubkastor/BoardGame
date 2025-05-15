@@ -1,8 +1,10 @@
 using BoardGame;
+using BoardGame.Application;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddModelsDependencies();
 builder.Services.AddApplicationDependencies();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

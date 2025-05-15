@@ -5,7 +5,7 @@ namespace BoardGame;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddApplicationDependencies(this IServiceCollection services)
+    public static IServiceCollection AddModelsDependencies(this IServiceCollection services)
     {
         services.AddSingleton<INpcRepository, NpcRepository>();
         services.AddSingleton<IGameStateRepository, GameStateRepository>();

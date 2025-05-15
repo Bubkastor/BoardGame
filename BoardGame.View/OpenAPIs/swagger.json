@@ -17,20 +17,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "integer",
-                  "format": "int32"
+                  "$ref": "#/components/schemas/CreateGameCommandResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "integer",
-                  "format": "int32"
+                  "$ref": "#/components/schemas/CreateGameCommandResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "integer",
-                  "format": "int32"
+                  "$ref": "#/components/schemas/CreateGameCommandResult"
                 }
               }
             }
@@ -57,35 +54,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/Cell"
-                    }
-                  }
+                  "$ref": "#/components/schemas/GetMapQueryResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/Cell"
-                    }
-                  }
+                  "$ref": "#/components/schemas/GetMapQueryResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/Cell"
-                    }
-                  }
+                  "$ref": "#/components/schemas/GetMapQueryResult"
                 }
               }
             }
@@ -126,7 +105,24 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TurnCellCommandResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TurnCellCommandResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TurnCellCommandResult"
+                }
+              }
+            }
           }
         }
       }
@@ -147,6 +143,36 @@
         },
         "additionalProperties": false
       },
+      "CreateGameCommandResult": {
+        "type": "object",
+        "properties": {
+          "idGame": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetMapQueryResult": {
+        "type": "object",
+        "properties": {
+          "idGame": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "map": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Cell"
+              }
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "TileType": {
         "enum": [
           0,
@@ -156,6 +182,15 @@
         ],
         "type": "integer",
         "format": "int32"
+      },
+      "TurnCellCommandResult": {
+        "type": "object",
+        "properties": {
+          "isTurn": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
       }
     }
   }

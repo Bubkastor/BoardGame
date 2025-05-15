@@ -1,45 +1,32 @@
 using BoardGame.Models;
 using BoardGame.Models.Map;
+using BoardGame.Models.Mediator.Commands;
+using BoardGame.Models.Mediator.Quieres;
 using BoardGame.Repository;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BoardGame.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class GameController(
-    IGameStateRepository gameStateRepository, 
-    IStartScenarioRepository startScenarioRepository) : Controller
+public class GameController(IMediator mediator) : Controller
 {
     [HttpGet]
-    public int StartGame()
+    public async Task<CreateGameCommandResult> StartGame()
     {
-        var id = 1;
-        var gameState = gameStateRepository.GetGameState(id);
-        if (gameState != null)
-        {
-            return id;
-        }
-        gameState = new GameState()
-        {
-            Scenario = ScenarioType.Commonwealth,
-            Map = startScenarioRepository.GetScenarioByType(ScenarioType.Commonwealth).Map
-        };
-        gameStateRepository.CreateGameState(id, gameState);
-        return id;
+        var command = new CreateGameCommand();
+        return await mediator.Send(command);
     }
 
     [HttpPost]
-    public List<List<Cell>> GetMap(int id)
+    public async Task<GetMapQueryResult> GetMap(int id)
     {
-        var state = gameStateRepository.GetGameState(id);
-        if (state != null)
+        var query = new GetMapQuery()
         {
-            return state.Map;
-        }
-        else
-        {
-            return new List<List<Cell>>();
-        }
+            IdGame = id
+        };
+
+        return await mediator.Send(query);
     }
 }

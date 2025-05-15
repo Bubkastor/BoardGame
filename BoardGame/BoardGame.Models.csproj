@@ -12,6 +12,8 @@
     <PackageReference Include="Microsoft.Msagl.Drawing" Version="1.1.6" />
     <PackageReference Include="Microsoft.Msagl.GraphViewerGDI" Version="1.1.7" /> -->
   
+    <PackageReference Include="MediatR.Contracts" Version="2.0.1" />
+  
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.4" />
   </ItemGroup>
 
