@@ -28,9 +28,15 @@ public class PlayerController(
             .ToList();
 
         var tillsByType = playFieldTilRepository.GetPlayFieldTilByTileType(cell.TileType);
+      
+
         tillsByType.RemoveAll(x => existTilsType.Contains(x.Id));
+        if (tillsByType.Count == 0)
+        {
+            return;
+        }
         var random = new Random();
-        var newTil = tillsByType[random.Next(0, tillsByType.Count + 1)];
+        var newTil = tillsByType[random.Next(0, tillsByType.Count)];
 
         gameState.Map[row][col].IdTil = newTil.Id;
         gameStateRepository.UpdateGameState(idGame, gameState);

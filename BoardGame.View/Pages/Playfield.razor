@@ -1,0 +1,83 @@
+﻿@using BoardGame.Models.Map
+@using BoardGame.Repository
+<h3>Playfield</h3>
+
+@if (IsLoad)
+{
+    <div class="playBoard">
+        @{
+            var items = _maps;
+            if (items == null)
+                return;
+
+            var row = 0;
+            foreach (var line in items)
+            {
+                <div class="customRow">
+                    @if (row % 2 == 1)
+                    {
+                        <div class="emptyTill"></div>
+                    }
+                    @{
+                        var col = 0;
+                    }
+                    @foreach (var cell in line)
+                    {
+                        var currentRow = row;
+                        var currentCol = col;
+                        <div class="till @GetTilColor(cell.TileType)" @onclick="async () => await TurnCell(currentRow, currentCol)">
+                            @if (cell.IdTil != 0)
+                            {
+                                var til = _repo.GetPlayFieldTilById(cell.IdTil);
+                                var names = til.NodeProps.Where(x => x.Meet != null)
+                                .Select(x => x.Meet.Name)
+                                .ToList();
+                                @string.Join(',', names)
+                                ;
+                            }
+                            <img class="img" src="/img/Tils/@GetImg(cell)" />
+                        </div>
+                        col += 1;
+                    }
+
+                    @{
+                        row += 1;
+                    }
+                </div>
+            }
+        }
+
+    </div>
+}
+<style>
+    .playBoard {
+        display: flex;
+        flex-direction: column;
+        flex: 0 0;
+    }
+
+    .customRow {
+        display: flex;
+        flex-direction: row;
+        flex: 0 0;
+    }
+
+    .emptyTill {
+        width: 150px;
+        height: 300px;
+    }
+
+    .till {
+        width: 300px;
+        height: 300px;
+        position: relative;
+    }
+
+    .img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .till.id {
+    }
+</style>
