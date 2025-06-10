@@ -1,0 +1,29 @@
+<div class="dialog">
+    <div class="button">
+        Новая игра
+    </div>
+    <div class="button" @onclick="async() => await NextScreen()">
+        Продолжить
+    </div>
+</div>
+<style>
+    .dialog{
+        width: 400px;
+        margin: 0 auto;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    .button{
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 10px;
+        
+    }
+    
+</style>
+@code {
+    
+}

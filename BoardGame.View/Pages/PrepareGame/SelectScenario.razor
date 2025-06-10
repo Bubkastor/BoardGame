@@ -1,0 +1,14 @@
+<h3>StartSettingGame</h3>
+
+<div>
+    <h3>Выберите сценарий</h3>
+    <div>
+        <select @bind="SelectedScenarioId" class="form-control">
+            @foreach (var scenario in Scenarios.ScenariosList)
+            {
+                <option value="@scenario.Id">@scenario.NameScenario</option>
+            }
+        </select>
+    </div>
+</div>
+<button @onclick="async() => await NextScreen()">Next</button>
