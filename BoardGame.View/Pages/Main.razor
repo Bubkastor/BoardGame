@@ -1,8 +1,8 @@
 <div class="dialog">
-    <div class="button">
+    <div class="button" @onclick="async() => await NextScreen()">
         Новая игра
     </div>
-    <div class="button" @onclick="async() => await NextScreen()">
+    <div class="button">
         Продолжить
     </div>
 </div>
@@ -20,7 +20,6 @@
         padding: 10px;
         text-align: center;
         margin-bottom: 10px;
-        
     }
     
 </style>
