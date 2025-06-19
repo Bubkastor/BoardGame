@@ -16,41 +16,6 @@
 .hiLayout{
     border-radius: 4px;
     background: red;
-   
-}
-.hpLayout{
-    display: flex;
-    flex-direction: row;
-    flex: 1 1;
-    flex-wrap: nowrap;
-    background: #344347;
-}
-.point{
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-}
-.point-icon{
-    width: 10px;
-    height: 10px;
-    border-radius: 100px;
-    background: white;
-}
-.pin-radiation{
-    width: 12px;
-    height: 12px;
-    border-radius: 100px;
-    background: green;
-    border: 1px solid gray;
-    box-shadow: black 4px 4px 4px;
-}
-.pin-hp{
-    width: 12px;
-    height: 12px;
-    border-radius: 100px;
-    background: red;
-    border: 1px solid gray;
-    box-shadow: black 4px 4px 4px;
 }
 .text{
     color: green;  

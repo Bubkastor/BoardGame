@@ -1,0 +1,11 @@
+<div class="hpLayout">
+    <div class="icon radiation">Rad</div>
+    @for (int i = 1; i <= MaxHp; i++)
+    {
+    <div class="point">
+        <span class="text">@i</span>
+        <div class="point-icon @(i == CurrentRadiation? "pin-radiation" : "") @(i == CurrentHp ? "pin-hp" : "")"></div>
+    </div>
+    }
+    <div class="icon hp">HP</div>
+</div>
