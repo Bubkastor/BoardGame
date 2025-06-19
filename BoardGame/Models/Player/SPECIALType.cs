@@ -9,6 +9,7 @@ namespace BoardGame.Model
     [Flags]
     public enum SPECIALType
     {
+        None = 0,
         S = 1,
         P = 2,
         E = 4,

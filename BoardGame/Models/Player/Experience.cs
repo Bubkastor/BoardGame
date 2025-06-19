@@ -8,6 +8,11 @@ namespace BoardGame.Model
 {
     public class Experience
     {
-        public int CurrentExp { get; set; }
+        public SPECIALType CurrentType { get; init; }
+        
+        public Experience(SPECIALType sp)
+        {
+            CurrentType = sp;
+        }
     }
 }

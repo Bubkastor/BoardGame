@@ -20,7 +20,7 @@
     height: 12px;
     border-radius: 100px;
     background: green;
-    border: 1px solid gray;
+    border: 1px solid green;
     box-shadow: black 4px 4px 4px;
 }
 .pin-hp{
@@ -28,6 +28,6 @@
     height: 12px;
     border-radius: 100px;
     background: red;
-    border: 1px solid gray;
+    border: 1px solid red;
     box-shadow: black 4px 4px 4px;
 }

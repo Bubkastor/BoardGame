@@ -1,0 +1,36 @@
+@using BoardGame.Model
+<div class="specialLayout">
+    <div class="specialColumn">
+        <div class="word">&nbsp;</div>
+        <div class="xp @(Exp.CurrentType == SPECIALType.None? "enable": "")"></div>
+    </div>
+    <div class="specialColumn">
+        <div class="word @(Special.HasSPECIAL(SPECIALType.S) ? "enable" : "")">S</div>
+        <div class="xp @(Exp.CurrentType == SPECIALType.S ? "enable" : "")"></div>
+    </div>
+    <div class="specialColumn">
+        <div class="word @(Special.HasSPECIAL(SPECIALType.P) ? "enable" : "")">P</div>
+        <div class="xp @(Exp.CurrentType == SPECIALType.P ? "enable" : "")"></div>
+    </div>
+
+    <div class="specialColumn">
+        <div class="word @(Special.HasSPECIAL(SPECIALType.E) ? "enable" : "")">E</div>
+        <div class="xp @(Exp.CurrentType == SPECIALType.E ? "enable" : "")"></div>
+    </div>
+    <div class="specialColumn">
+        <div class="word @(Special.HasSPECIAL(SPECIALType.C) ? "enable" : "")">C</div>
+        <div class="xp @(Exp.CurrentType == SPECIALType.C ? "enable" : "")"></div>
+    </div>
+    <div class="specialColumn">
+        <div class="word @(Special.HasSPECIAL(SPECIALType.I) ? "enable" : "")">I</div>
+        <div class="xp @(Exp.CurrentType == SPECIALType.I ? "enable" : "")"></div>
+    </div>
+    <div class="specialColumn">
+        <div class="word @(Special.HasSPECIAL(SPECIALType.A) ? "enable" : "")">A</div>
+        <div class="xp @(Exp.CurrentType == SPECIALType.A ? "enable" : "")"></div>
+                                                                                             </div>
+    <div class="specialColumn">
+        <div class="word @(Special.HasSPECIAL(SPECIALType.L) ? "enable" : "")">L</div>
+        <div class="xp @(Exp.CurrentType == SPECIALType.L ? "enable" : "")"></div>
+    </div>
+</div>
