@@ -1,22 +1,29 @@
 ﻿@page "/"
 @using BoardGame.View.Pages.PrepareGame
+@using BoardGame.View.Pages.Game
 
 <PageTitle>Index</PageTitle>
-
-@switch (CurrentStep)
+@if (!IsLoadGame)
 {
-    case PrepareStep.None:
-        <Main SetStep="() => SetStep(PrepareStep.Scenario)"></Main>
-        break;
-    case PrepareStep.Scenario:
-        <SelectScenario SetStep="() => SetStep(PrepareStep.PlayerCount)"></SelectScenario>
-        break;
-    case PrepareStep.PlayerCount:
-        <SelectPlayerCount SetStep="() => SetStep(PrepareStep.Character)"></SelectPlayerCount>
-        break;
-    case PrepareStep.Character:
-        <SelectCharacter SetStep="() => Finish()"></SelectCharacter>
-        break;
-    default:
+    <Game></Game>
+}
+else
+{
+    @switch (CurrentStep)
+    {
+        case PrepareStep.None:
+            <Main SetStep="() => SetStep(PrepareStep.Scenario)"></Main>
             break;
+        case PrepareStep.Scenario:
+            <SelectScenario SetStep="() => SetStep(PrepareStep.PlayerCount)"></SelectScenario>
+            break;
+        case PrepareStep.PlayerCount:
+            <SelectPlayerCount SetStep="() => SetStep(PrepareStep.Character)"></SelectPlayerCount>
+            break;
+        case PrepareStep.Character:
+            <SelectCharacter SetStep="() => Finish()"></SelectCharacter>
+            break;
+        default:
+            break;
+    }
 }

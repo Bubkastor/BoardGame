@@ -1,0 +1,27 @@
+.playerPlate{
+    display: block;
+    position: relative;
+    width: 800px;
+    height: 200px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+.lowerLayout{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: green;
+    border-radius: 4px;
+}
+.hiLayout{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 20px;
+    bottom: 50px;
+    border-radius: 4px;
+}

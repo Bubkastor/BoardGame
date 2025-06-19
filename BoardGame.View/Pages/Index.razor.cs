@@ -5,6 +5,7 @@ namespace BoardGame.View.Pages;
 public partial class Index
 {
     public PrepareStep CurrentStep { get; private set; } = PrepareStep.None;
+    public bool IsLoadGame = false;
         
     public enum PrepareStep
     {
@@ -21,6 +22,7 @@ public partial class Index
 
     public void Finish()
     {
-        
+        CurrentStep = PrepareStep.None;
+        IsLoadGame = true;
     }
 }
