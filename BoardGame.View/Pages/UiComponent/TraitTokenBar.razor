@@ -1,0 +1,11 @@
+<div class="traitTokenLayout">
+    @for (int i = 0; i < COUNT_TRAIT_TOKEN; i++)
+    {
+        <div class="traitToken @GetTraitToken(i)"></div>
+        @if (COUNT_TRAIT_TOKEN - 1 != i)
+        {
+            <div class="spliter"></div>
+        }
+    }
+    
+</div>

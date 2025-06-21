@@ -23,7 +23,7 @@ namespace BoardGame.Model
         public SPECIAL Special { get; set; }
         public Experience Exp { get; set; }
         public NpcProperties Properties { get; set; }
-        public List<PeculiaritiesType> Peculiarities { get; set; }
+        public List<TraitTokenType> Peculiarities { get; set; }
         public List<Card.Card> Inventory { get; set; }
         public Card.Card EquipmentBody { get; set; }
         public Card.Card EquipmentHand { get; set; }

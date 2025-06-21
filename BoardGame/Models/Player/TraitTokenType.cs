@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BoardGame.Model
 {
-    public enum PeculiaritiesType
+    public enum TraitTokenType
     {
         Idol,       // Кумир
         Despicable, // Призренный

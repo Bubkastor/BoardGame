@@ -3,11 +3,7 @@
     <div class="hiLayout">
         <div class="decorate"></div>
         <SpecialBar Special="CurrentSpecial" Exp="CurrentExp"></SpecialBar>
-        <div class="statusLayout">
-            <div class="status1"></div>
-            <div class="status1"></div>
-            <div class="status1"></div>
-        </div>
+        <TraitTokenBar TraitTokens="CurrentTraitTokens"></TraitTokenBar>
     </div>
     <div class="lowerLayout">
      <HpBar CurrentHp="10" CurrentRadiation="1"></HpBar>
@@ -16,5 +12,6 @@
 @code{
     public SPECIAL CurrentSpecial = new SPECIAL(SPECIALType.S | SPECIALType.P);
     public Experience CurrentExp = new Experience(SPECIALType.P);
+    public List<TraitTokenType> CurrentTraitTokens = [TraitTokenType.Cheerful, TraitTokenType.Idol];
 }
 
