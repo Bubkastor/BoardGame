@@ -1,5 +1,5 @@
-using BoardGame;
 using BoardGame.Application;
+using BoardGame.Models;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);

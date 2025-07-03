@@ -1,6 +1,4 @@
-using BoardGame.Model.Map;
 using BoardGame.Models.Mediator.Commands;
-using BoardGame.Repository;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

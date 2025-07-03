@@ -1,4 +1,4 @@
-﻿using BoardGame.Repository;
+﻿using BoardGame.Models.Repository;
 
 namespace BoardGame.View.Pages;
 public partial class Playfield

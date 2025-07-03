@@ -1,4 +1,4 @@
-using BoardGame.Model;
+using BoardGame.Models.PlayerState;
 using Microsoft.AspNetCore.Components;
 
 namespace BoardGame.View.Pages.UiComponent;

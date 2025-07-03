@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BoardGame\BoardGame.Models.csproj" />
+    <ProjectReference Include="..\BoardGame.Models\BoardGame.Models.csproj" />
   </ItemGroup>
 
 </Project>

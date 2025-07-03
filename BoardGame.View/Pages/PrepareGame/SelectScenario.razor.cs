@@ -1,4 +1,4 @@
-using BoardGame.Models;
+using BoardGame.Models.View;
 using Microsoft.AspNetCore.Components;
 
 namespace BoardGame.View.Pages.PrepareGame;

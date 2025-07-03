@@ -1,5 +1,5 @@
 ﻿using BoardGame.Models.Mediator.Quieres;
-using BoardGame.Repository;
+using BoardGame.Models.Repository;
 using MediatR;
 
 namespace BoardGame.Application.Features.Map.Quieres;
