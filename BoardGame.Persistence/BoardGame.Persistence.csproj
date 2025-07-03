@@ -6,4 +6,17 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="15.0.0" />
+      <PackageReference Include="linq2db" Version="5.4.1" />
+      <PackageReference Include="linq2db.PostgreSQL" Version="5.4.1" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.6" />
+      <PackageReference Include="Microsoft.Extensions.Options" Version="9.0.6" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BoardGame.Extensions.Options\BoardGame.Extensions.Options.csproj" />
+      <ProjectReference Include="..\BoardGame.Models\BoardGame.Models.csproj" />
+    </ItemGroup>
+
 </Project>
