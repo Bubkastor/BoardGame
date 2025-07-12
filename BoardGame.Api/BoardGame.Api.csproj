@@ -4,6 +4,7 @@
         <TargetFramework>net9.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
     <ItemGroup>
@@ -16,6 +17,14 @@
     <ItemGroup>
       <ProjectReference Include="..\BoardGame.Application\BoardGame.Application.csproj" />
       <ProjectReference Include="..\BoardGame.Models\BoardGame.Models.csproj" />
+      <ProjectReference Include="..\BoardGame.Persistence.Migrations\BoardGame.Persistence.Migrations.csproj" />
+      <ProjectReference Include="..\BoardGame.Persistence\BoardGame.Persistence.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
     </ItemGroup>
 
 </Project>

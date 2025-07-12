@@ -1,5 +1,6 @@
 using AutoMapper;
 using BoardGame.Models.Game;
+using BoardGame.Persistence.Models;
 using LinqToDB;
 
 namespace BoardGame.Persistence.Repositories;
@@ -14,8 +15,14 @@ internal class GameSessionRepository(BoardGameDbStorage storage, IMapper mapper)
         return gameSession;
     }
 
-    public Task<GameSession> CreateGameSessionAsync()
+    public async Task<GameSession> CreateGameSessionAsync()
     {
-        throw new NotImplementedException();
+        var newGame = new GameSession()
+        {
+            Code = Guid.NewGuid().ToString()
+        };
+        var newGameSessionEntity = mapper.Map<GameSessionEntity>(newGame);
+        await storage.InsertAsync(newGameSessionEntity);
+        return newGame;
     }
 }

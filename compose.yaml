@@ -1,0 +1,34 @@
+﻿services:
+  boardgame.api:
+    image: boardgame.api
+    build:
+      context: .
+      dockerfile: BoardGame.Api/Dockerfile
+    ports:
+        - "5050:5051"
+    depends_on:
+      - db
+  db:
+    image: postgres
+    restart: always
+    shm_size: 128mb
+    environment:
+      POSTGRES_PASSWORD: "123456"
+      POSTGRES_USER: "bubokastor"
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+      POSTGRES_DB: "postgres"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  admin:
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_PASSWORD: 123456
+      PGADMIN_DEFAULT_EMAIL: "bubokastor@mail.ru"
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+volumes:
+  postgres_data:

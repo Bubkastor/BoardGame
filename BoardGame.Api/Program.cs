@@ -1,5 +1,7 @@
 using BoardGame.Application;
 using BoardGame.Models;
+using BoardGame.Persistence;
+using BoardGame.Persistence.Migrations;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +19,7 @@ builder.Services.AddSwaggerGen(options =>
         Description = "Api for testing"
     });
 });
+builder.Services.ConfigureBoardGameDb(builder.Configuration.GetSection("Persistence:BoardGameDb"));
 
 var app = builder.Build();
 app.MapControllers();
@@ -30,6 +33,7 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+app.UpdateBoardGameDb(builder.Configuration.GetSection("Persistence:BoardGameDb"));
 app.UseSwagger();
 app.UseSwaggerUI();
 app.UseHttpsRedirection();

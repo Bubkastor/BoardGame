@@ -1,0 +1,21 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  boardgame.api:
+    build:
+      context: "/Users/albert/Documents/src/BoardGame"
+      dockerfile: "BoardGame.Api/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net9.0/BoardGame.Api.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "boardgame.api2:dev"
+    ports: []
+    volumes:
+    - "/Users/albert/Documents/src/BoardGame/BoardGame.Api:/app:rw"
+    - "/Users/albert/Documents/src/BoardGame:/src:rw"
+    - "/Users/albert/.nuget/packages:/home/app/.nuget/packages"
+    working_dir: "/app"
