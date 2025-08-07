@@ -1,17 +1,13 @@
 ﻿using BoardGame.Models.Repository;
+using BoardGame.Models.Tiles;
 
 namespace BoardGame.View.Pages;
-public partial class Playfield
+public partial class Playfield(IHttpClientFactory httpClientFactory)
 {
     public IPlayFieldTilRepository _repo = new PlayFieldTilRepository();
-    private ApiClient _apiClient;
+    private ApiClient _apiClient = new("http://api:3000", httpClientFactory.CreateClient());
     public IEnumerable<IEnumerable<Cell>>? _maps = null;
     public bool IsLoad { get; private set; } = false;
-
-    public Playfield(IHttpClientFactory httpClientFactory)
-    {
-        _apiClient = new ApiClient("https://localhost:7032", httpClientFactory.CreateClient());
-    }
 
     protected override async Task OnInitializedAsync()
     {

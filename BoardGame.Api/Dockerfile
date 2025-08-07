@@ -1,8 +1,9 @@
 ﻿FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
 USER $APP_UID
 WORKDIR /app
-EXPOSE 5050
-EXPOSE 5051
+EXPOSE 3000
+EXPOSE 3443
+EXPOSE 9229
 
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
@@ -25,4 +26,7 @@ RUN dotnet publish "./BoardGame.Api.csproj" -c $BUILD_CONFIGURATION -o /app/publ
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+RUN apt-get update && apt-get install -y ca-certificates
+COPY --from=build /src/certs/api.crt /usr/local/share/ca-certificates/
+RUN update-ca-certificates
 ENTRYPOINT ["dotnet", "BoardGame.Api.dll"]

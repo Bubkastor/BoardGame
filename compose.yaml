@@ -1,34 +1,86 @@
 ﻿services:
-  boardgame.api:
-    image: boardgame.api
-    build:
-      context: .
-      dockerfile: BoardGame.Api/Dockerfile
-    ports:
-        - "5050:5051"
-    depends_on:
-      - db
+  # База данных PostgreSQL
   db:
     image: postgres
     restart: always
-    shm_size: 128mb
     environment:
-      POSTGRES_PASSWORD: "123456"
-      POSTGRES_USER: "bubokastor"
-      POSTGRES_HOST_AUTH_METHOD: "trust"
-      POSTGRES_DB: "postgres"
+      POSTGRES_USER: bubokastor
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: postgres
+      POSTGRES_HOST_AUTH_METHOD: trust  # Для упрощения дебага (не использовать в production!)
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    healthcheck:  # Добавляем healthcheck для depends_on
+      test: ["CMD-SHELL", "pg_isready -U bubokastor -d postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # PGAdmin для управления БД
   admin:
     image: dpage/pgadmin4:latest
     environment:
+      PGADMIN_DEFAULT_EMAIL: bubokastor@mail.ru
       PGADMIN_DEFAULT_PASSWORD: 123456
-      PGADMIN_DEFAULT_EMAIL: "bubokastor@mail.ru"
     ports:
       - "8080:80"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+
+  # Backend (ASP.NET Core)
+  api:
+    image: boardgame.api
+    build:
+      context: .
+      dockerfile: BoardGame.Api/Dockerfile
+      args:
+        BUILD_CONFIGURATION: "Development"  # Или "Release"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development  # Режим разработки
+      - ASPNETCORE_HTTP_PORTS=3000
+      - ASPNETCORE_HTTPS_PORTS=3001
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=1234
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/api.pfx
+
+    ports:
+      - "3000:3000"
+      - "3001:3001"  # HTTPS порт
+      - "9229:9229"  # Порт для дебага .NET (VS Code/Rider)
+    volumes:
+      - ./BoardGame.Api:/app  # Hot-reload кода
+      - ./certs:/https
+      - ~/.nuget/packages:/root/.nuget/packages:ro  # Кеш NuGet (ускоряет сборку)
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # Frontend (если это веб-приложение)
+  view:
+    image: boardgame.view
+    build:
+      context: .
+      dockerfile: BoardGame.View/Dockerfile
+      args:
+        BUILD_CONFIGURATION: "Development"  # Или "Release"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development  # Режим разработки
+      - ASPNETCORE_HTTP_PORTS=4000
+      - ASPNETCORE_HTTPS_PORTS=4001
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=1234
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/api.pfx
+    ports:
+      - "4000:4000"
+      - "4001:4001"  # HTTPS порт
+      - "24678:24678" 
+    volumes:
+      - ./certs:/https
+      - ./BoardGame.View:/app 
+      - /app/node_modules  
+    depends_on:
+      api:
+        condition: service_started
 volumes:
   postgres_data:

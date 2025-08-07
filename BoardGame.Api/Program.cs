@@ -32,10 +32,13 @@ if (app.Environment.IsDevelopment())
         options.RoutePrefix = string.Empty;
     });
 }
+else
+{
+    app.UseHttpsRedirection();
+}
 
 app.UpdateBoardGameDb(builder.Configuration.GetSection("Persistence:BoardGameDb"));
 app.UseSwagger();
 app.UseSwaggerUI();
-app.UseHttpsRedirection();
 
 app.Run();

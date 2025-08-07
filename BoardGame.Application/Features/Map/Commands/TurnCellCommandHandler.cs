@@ -15,6 +15,8 @@ internal class TurnCellCommandHandler(
             ?? throw new ArgumentNullException(nameof(request.IdGame), "Game state not found");
 
         var cell = gameState.Map[request.Row][request.Col];
+        if (cell.IsOpen)
+            return new TurnCellCommandResult { IsTurn = false };
 
         var existTilsType = GetExistingTileIdsOfSameType(gameState, cell.TileType);
         var availableTiles = playFieldTilRepository.GetPlayFieldTilByTileType(cell.TileType)
@@ -32,7 +34,7 @@ internal class TurnCellCommandHandler(
         return new TurnCellCommandResult { IsTurn = true };
     }
 
-    private static List<int> GetExistingTileIdsOfSameType(GameState gameState, TileType tileType)
+    private List<int> GetExistingTileIdsOfSameType(GameState gameState, TileType tileType)
     {
         return gameState.Map
             .SelectMany(row => row)
@@ -51,6 +53,7 @@ internal class TurnCellCommandHandler(
     private void UpdateGameState(TurnCellCommand request, GameState gameState, PlayFieldTil newTile)
     {
         gameState.Map[request.Row][request.Col].IdTil = newTile.Id;
+        gameState.Map[request.Row][request.Col].IsOpen = true;
         gameStateRepository.UpdateGameState(request.IdGame, gameState);
     }
 }

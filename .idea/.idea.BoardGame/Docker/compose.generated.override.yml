@@ -1,6 +1,6 @@
 # This is a generated file. Not intended for manual editing.
 services:
-  boardgame.api:
+  api:
     build:
       context: "/Users/albert/Documents/src/BoardGame"
       dockerfile: "BoardGame.Api/Dockerfile"
@@ -8,14 +8,32 @@ services:
     command: []
     entrypoint:
     - "dotnet"
-    - "/app/bin/Debug/net9.0/BoardGame.Api.dll"
+    - "/app-1/bin/Debug/net9.0/BoardGame.Api.dll"
     environment:
-      ASPNETCORE_ENVIRONMENT: "Development"
       DOTNET_USE_POLLING_FILE_WATCHER: "true"
-    image: "boardgame.api2:dev"
+    image: "boardgame.api:dev"
     ports: []
     volumes:
-    - "/Users/albert/Documents/src/BoardGame/BoardGame.Api:/app:rw"
+    - "/Users/albert/Documents/src/BoardGame/BoardGame.Api:/app-1:rw"
     - "/Users/albert/Documents/src/BoardGame:/src:rw"
     - "/Users/albert/.nuget/packages:/home/app/.nuget/packages"
-    working_dir: "/app"
+    working_dir: "/app-1"
+  view:
+    build:
+      context: "/Users/albert/Documents/src/BoardGame"
+      dockerfile: "BoardGame.View/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app-1/bin/Debug/net9.0/BoardGame.View.dll"
+    environment:
+      ASPNETCORE_STATICWEBASSETS: "/app-1/bin/Debug/net9.0/BoardGame.View.staticwebassets.runtime.CT.json"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "boardgame.view:dev"
+    ports: []
+    volumes:
+    - "/Users/albert/Documents/src/BoardGame/BoardGame.View:/app-1:rw"
+    - "/Users/albert/Documents/src/BoardGame:/src:rw"
+    - "/Users/albert/.nuget/packages:/home/app/.nuget/packages"
+    working_dir: "/app-1"
