@@ -39,7 +39,7 @@
       args:
         BUILD_CONFIGURATION: "Development"  # Или "Release"
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development  # Режим разработки
+      - ASPNETCORE_ENVIRONMENT=Docker  # Режим разработки
       - ASPNETCORE_HTTP_PORTS=3000
       - ASPNETCORE_HTTPS_PORTS=3001
       - ASPNETCORE_Kestrel__Certificates__Default__Password=1234
@@ -66,7 +66,7 @@
       args:
         BUILD_CONFIGURATION: "Development"  # Или "Release"
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development  # Режим разработки
+      - ASPNETCORE_ENVIRONMENT=Docker  # Режим разработки
       - ASPNETCORE_HTTP_PORTS=4000
       - ASPNETCORE_HTTPS_PORTS=4001
       - ASPNETCORE_Kestrel__Certificates__Default__Password=1234

@@ -1,5 +1,7 @@
+using BoardGame.View.Config;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using BoardGame.Extensions.Options;
 
 namespace BoardGame.View;
 
@@ -13,6 +15,8 @@ public class Program
         builder.Services.AddRazorPages();
         builder.Services.AddServerSideBlazor();
         builder.Services.AddHttpClient();
+        //builder.Services.AddOptions<SettingsApi>().BindAndValidateDataAnnotationsOnStartRecursively(builder.Configuration.GetSection("Api"));
+
 
         var app = builder.Build();
 
@@ -23,8 +27,11 @@ public class Program
             // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
             app.UseHsts();
         }
+        else
+        {
+            app.UseHttpsRedirection();
+        }
 
-        app.UseHttpsRedirection();
 
         app.UseStaticFiles();
 

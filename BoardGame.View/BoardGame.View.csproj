@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BoardGame.Extensions.Options\BoardGame.Extensions.Options.csproj" />
     <ProjectReference Include="..\BoardGame.Models\BoardGame.Models.csproj" />
   </ItemGroup>
 
