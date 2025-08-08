@@ -1,4 +1,5 @@
 ﻿using BoardGame.Models;
+using BoardGame.Models.Enemy;
 using BoardGame.Models.Mediator.Commands;
 using BoardGame.Models.Repository;
 using MediatR;
@@ -12,20 +13,18 @@ internal class CreateGameCommandHandler(
     public async Task<CreateGameCommandResult> Handle(CreateGameCommand request, CancellationToken cancellationToken)
     {
         var result = new CreateGameCommandResult();
-        var id = 1;
-        result.IdGame = id;
-        var gameState = await gameStateRepository.GetGameStateAsync(id);
-        if (gameState != null)
+        var gameState = new GameState()
         {
-            return result;
-        }
-        gameState = new GameState()
-        {
-            Scenario = ScenarioType.Commonwealth,
-            Map = startScenarioRepository.GetScenarioByType(ScenarioType.Commonwealth).Map
+            Scenario = request.scenarioType,
+            Map = startScenarioRepository.GetScenarioByType(request.scenarioType).Map,
+            PlayerNames = new List<string>(),
+            NpsInfos = new List<Npc>(),
+            PlayersInfo = new Dictionary<int, Models.PlayerState.Player>()
         };
 
-        gameStateRepository.CreateGameState(id, gameState);
+        var idGame = await gameStateRepository.CreateGameStateAsync(gameState);
+        result.IdGame = idGame;
+
         return result;
     }
 }

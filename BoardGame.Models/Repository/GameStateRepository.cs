@@ -2,16 +2,21 @@ namespace BoardGame.Models.Repository;
 
 public class GameStateRepository : IGameStateRepository
 {
-    private Dictionary<int, GameState> _gameStates = new Dictionary<int, GameState>();
-    public void CreateGameState(int id, GameState gameState)
+    private List<GameState> _gameStates = new List<GameState>();
+    public async Task<int> CreateGameStateAsync(GameState gameState)
     {
-        _gameStates.TryAdd(id, gameState);
+        if (!_gameStates.Contains(gameState))
+        {
+            _gameStates.Add(gameState);
+        }
+        return await Task.FromResult(_gameStates.IndexOf(gameState));
     }
 
     public async Task<GameState?> GetGameStateAsync(int id)
     {
-        if(_gameStates.TryGetValue(id, out var state))
+        if (id >= 0 && id < _gameStates.Count)
         {
+            var state = _gameStates[id];
             return await Task.FromResult(state);
         }
 

@@ -1,3 +1,4 @@
+using BoardGame.Models;
 using BoardGame.Models.Mediator.Commands;
 using BoardGame.Models.Mediator.Quieres;
 using MediatR;
@@ -10,9 +11,13 @@ namespace BoardGame.Api.Controllers;
 public class GameController(IMediator mediator) : Controller
 {
     [HttpGet]
-    public async Task<CreateGameCommandResult> StartGame()
+    public async Task<CreateGameCommandResult> StartGame(ScenarioType scenarioType, int playersCount)
     {
-        var command = new CreateGameCommand();
+        var command = new CreateGameCommand()
+        {
+            scenarioType = scenarioType,
+            PlayersCount = playersCount
+        };
         return await mediator.Send(command);
     }
 
