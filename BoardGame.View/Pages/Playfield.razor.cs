@@ -1,9 +1,12 @@
 ﻿using BoardGame.Models.Repository;
 using BoardGame.Models.Tiles;
+using Microsoft.AspNetCore.Components;
 
 namespace BoardGame.View.Pages;
 public partial class Playfield(IHttpClientFactory httpClientFactory)
 {
+    [Parameter]
+    public string IdGame { get; set; }
     public IPlayFieldTilRepository _repo = new PlayFieldTilRepository();
     private ApiClient _apiClient = new("http://api:3000", httpClientFactory.CreateClient());
     public IEnumerable<IEnumerable<Cell>>? _maps = null;
@@ -13,6 +16,8 @@ public partial class Playfield(IHttpClientFactory httpClientFactory)
     {
         try
         {
+            var checkGameResponse = await _apiClient.GameGETAsync();
+            
             var response = await _apiClient.GameGETAsync();
             var gameState = await _apiClient.GamePOSTAsync(response.IdGame);
             if (gameState.Map != null)

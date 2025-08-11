@@ -6,6 +6,7 @@ public partial class Index
 {
     public PrepareStep CurrentStep { get; private set; } = PrepareStep.None;
     public bool IsLoadGame = false;
+    public string IdGame = string.Empty;
         
     public enum PrepareStep
     {
@@ -20,8 +21,9 @@ public partial class Index
         CurrentStep = step;
     }
 
-    public void Finish()
+    public void Finish(string idGame = "")
     {
+        IdGame = idGame;
         CurrentStep = PrepareStep.None;
         IsLoadGame = true;
     }

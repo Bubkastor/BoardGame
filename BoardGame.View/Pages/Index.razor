@@ -5,14 +5,14 @@
 <PageTitle>Index</PageTitle>
 @if (IsLoadGame)
 {
-    <Game></Game>
+    <Game IdGame="IdGame"></Game>
 }
 else
 {
     @switch (CurrentStep)
     {
         case PrepareStep.None:
-            <Main SetStep="() => SetStep(PrepareStep.Scenario)"></Main>
+            <Main SetStep="() => SetStep(PrepareStep.Scenario)" SetStepContinue="(idGame) => Finish(idGame)"></Main>
             break;
         case PrepareStep.Scenario:
             <SelectScenario SetStep="() => SetStep(PrepareStep.PlayerCount)"></SelectScenario>
