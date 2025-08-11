@@ -37,7 +37,7 @@ else
     app.UseHttpsRedirection();
 }
 
-app.UpdateBoardGameDb(builder.Configuration.GetSection("Persistence:BoardGameDb"));
+//app.UpdateBoardGameDb(builder.Configuration.GetSection("Persistence:BoardGameDb"));
 app.UseSwagger();
 app.UseSwaggerUI();
 

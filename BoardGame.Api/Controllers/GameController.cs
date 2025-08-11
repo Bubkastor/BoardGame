@@ -11,7 +11,7 @@ namespace BoardGame.Api.Controllers;
 public class GameController(IMediator mediator) : Controller
 {
     [HttpGet]
-    public async Task<CreateGameCommandResult> StartGame(ScenarioType scenarioType, int playersCount)
+    public async Task<CreateGameCommandResult> StartGameAsync(ScenarioType scenarioType, int playersCount)
     {
         var command = new CreateGameCommand()
         {
@@ -21,12 +21,23 @@ public class GameController(IMediator mediator) : Controller
         return await mediator.Send(command);
     }
 
+    [HttpGet]
+    public async Task<CheckGameQueryResult> CheckGameAsync(string idGame)
+    {
+        var query = new CheckGameQuery()
+        {
+            IdGame = idGame
+        };
+        return await mediator.Send(query);
+    }
+    
+
     [HttpPost]
-    public async Task<GetMapQueryResult> GetMap(int id)
+    public async Task<GetMapQueryResult> GetMap(int idGame)
     {
         var query = new GetMapQuery()
         {
-            IdGame = id
+            IdGame = idGame
         };
 
         return await mediator.Send(query);
