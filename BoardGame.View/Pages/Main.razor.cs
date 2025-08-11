@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Components;
 using Blazor.Extensions.Storage;
+using BoardGame.Models;
 
 namespace BoardGame.View.Pages;
 
@@ -12,7 +13,10 @@ public partial class Main: ComponentBase
     public required EventCallback SetStep { get; set; }
     [Parameter]
     public required EventCallback<string> SetStepContinue { get; set; }
-    
+
+    public ScenarioType ScenarioType { get; set; }
+    public int PlayersCount { get; set; }
+
     private string idGame = string.Empty;
     private bool disableContinue = true;
     private static string ID_GAME_KEY = "ID_GAME_KEY";

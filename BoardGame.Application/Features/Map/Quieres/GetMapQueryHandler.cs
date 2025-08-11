@@ -13,7 +13,8 @@ internal class GetMapQueryHandler(IGameStateRepository gameStateRepository) : IR
             IdGame = request.IdGame,
             Map = null
         };
-        var state = await gameStateRepository.GetGameStateAsync(request.IdGame);
+        var idGame = int.Parse(request.IdGame);
+        var state = await gameStateRepository.GetGameStateAsync(idGame);
         if (state != null)
         {
             result.Map = state.Map;

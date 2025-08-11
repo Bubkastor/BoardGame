@@ -34,9 +34,9 @@ if (app.Environment.IsDevelopment())
 }
 else
 {
-    app.UseHttpsRedirection();
 }
 
+    app.UseHttpsRedirection();
 //app.UpdateBoardGameDb(builder.Configuration.GetSection("Persistence:BoardGameDb"));
 app.UseSwagger();
 app.UseSwaggerUI();

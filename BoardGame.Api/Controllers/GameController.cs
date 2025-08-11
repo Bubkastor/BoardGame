@@ -3,6 +3,7 @@ using BoardGame.Models.Mediator.Commands;
 using BoardGame.Models.Mediator.Quieres;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace BoardGame.Api.Controllers;
 
@@ -10,8 +11,10 @@ namespace BoardGame.Api.Controllers;
 [Route("api/[controller]")]
 public class GameController(IMediator mediator) : Controller
 {
-    [HttpGet]
-    public async Task<CreateGameCommandResult> StartGameAsync(ScenarioType scenarioType, int playersCount)
+    [HttpPost("start")]
+    [ProducesResponseType(typeof(CreateGameCommandResult), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<CreateGameCommandResult> StartGame([FromQuery] ScenarioType scenarioType, [FromQuery, Range(1, 4)] int playersCount)
     {
         var command = new CreateGameCommand()
         {
@@ -21,8 +24,10 @@ public class GameController(IMediator mediator) : Controller
         return await mediator.Send(command);
     }
 
-    [HttpGet]
-    public async Task<CheckGameQueryResult> CheckGameAsync(string idGame)
+    [HttpGet("{idGame}/status")]
+    [ProducesResponseType(typeof(CheckGameQueryResult), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<CheckGameQueryResult> CheckGame([FromRoute] string idGame)
     {
         var query = new CheckGameQuery()
         {
@@ -30,10 +35,12 @@ public class GameController(IMediator mediator) : Controller
         };
         return await mediator.Send(query);
     }
-    
 
-    [HttpPost]
-    public async Task<GetMapQueryResult> GetMap(int idGame)
+
+    [HttpGet("{idGame}/map")]
+    [ProducesResponseType(typeof(GetMapQueryResult), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<GetMapQueryResult> GetMap([FromRoute]string idGame)
     {
         var query = new GetMapQuery()
         {

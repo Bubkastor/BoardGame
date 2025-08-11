@@ -1,25 +1,41 @@
-﻿using BoardGame.Models.Repository;
+﻿using Blazor.Extensions.Storage;
+using BoardGame.Models;
+using BoardGame.Models.Repository;
 using BoardGame.Models.Tiles;
 using Microsoft.AspNetCore.Components;
 
 namespace BoardGame.View.Pages;
 public partial class Playfield(IHttpClientFactory httpClientFactory)
 {
+    
     [Parameter]
     public string IdGame { get; set; }
+    [Parameter]
+    public ScenarioType ScenarioType { get; set; }
+    [Parameter]
+    public int PlayersCount { get; set; }
+    
     public IPlayFieldTilRepository _repo = new PlayFieldTilRepository();
     private ApiClient _apiClient = new("http://api:3000", httpClientFactory.CreateClient());
     public IEnumerable<IEnumerable<Cell>>? _maps = null;
     public bool IsLoad { get; private set; } = false;
+    [Inject]
+    private LocalStorage LocalStorage { get; set; }
+    private static string ID_GAME_KEY = "ID_GAME_KEY";
+
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            var checkGameResponse = await _apiClient.GameGETAsync();
-            
-            var response = await _apiClient.GameGETAsync();
-            var gameState = await _apiClient.GamePOSTAsync(response.IdGame);
+            var checkGameResponse = await _apiClient.StatusAsync(IdGame);
+            if (!checkGameResponse.GameExist)
+            {
+                var startResult = await _apiClient.StartAsync(ScenarioType, PlayersCount);
+                IdGame = startResult.IdGame.ToString();
+                await LocalStorage.SetItem(ID_GAME_KEY, IdGame);
+            }
+            var gameState = await _apiClient.MapAsync(IdGame);
             if (gameState.Map != null)
             {
                 _maps = gameState.Map;
@@ -35,11 +51,11 @@ public partial class Playfield(IHttpClientFactory httpClientFactory)
 
     public string GetTilColor(TileType tileType)
     {
-        if (tileType == TileType._2)
+        if (tileType == TileType.Green)
             return "green";
-        if (tileType == TileType._3)
+        if (tileType == TileType.Red)
             return "red";
-        if (tileType == TileType._1)
+        if (tileType == TileType.Start)
             return "start";
         return "";
     }
@@ -51,14 +67,14 @@ public partial class Playfield(IHttpClientFactory httpClientFactory)
             return _repo.GetImgById(cell.IdTil);
         }
 
-        if (cell.TileType != TileType._0)
+        if (cell.TileType != TileType.None)
         {
-            if (cell.TileType == TileType._3)
+            if (cell.TileType == TileType.Red)
             {
                 return "Red.png";
             }
 
-            if (cell.TileType == TileType._2)
+            if (cell.TileType == TileType.Green)
             {
                 return "Green.png";
             }
@@ -70,8 +86,8 @@ public partial class Playfield(IHttpClientFactory httpClientFactory)
     public async Task TurnCell(int row, int col)
     {
         await _apiClient.PlayerAsync(1, row, col);
-        var response = await _apiClient.GameGETAsync();
-        var gameState = await _apiClient.GamePOSTAsync(response.IdGame);
+        
+        var gameState = await _apiClient.MapAsync(IdGame);
         if (gameState.Map != null)
             _maps = gameState.Map;
     }

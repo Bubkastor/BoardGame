@@ -6,10 +6,29 @@
     "version": "v1"
   },
   "paths": {
-    "/api/Game": {
-      "get": {
+    "/api/Game/start": {
+      "post": {
         "tags": [
           "Game"
+        ],
+        "parameters": [
+          {
+            "name": "scenarioType",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/ScenarioType"
+            }
+          },
+          {
+            "name": "playersCount",
+            "in": "query",
+            "schema": {
+              "maximum": 4,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -31,20 +50,101 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
           }
         }
-      },
-      "post": {
+      }
+    },
+    "/api/Game/{idGame}/status": {
+      "get": {
         "tags": [
           "Game"
         ],
         "parameters": [
           {
-            "name": "id",
-            "in": "query",
+            "name": "idGame",
+            "in": "path",
+            "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CheckGameQueryResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CheckGameQueryResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CheckGameQueryResult"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Game/{idGame}/map": {
+      "get": {
+        "tags": [
+          "Game"
+        ],
+        "parameters": [
+          {
+            "name": "idGame",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -65,6 +165,26 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/GetMapQueryResult"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
                 }
               }
             }
@@ -139,6 +259,18 @@
           },
           "tileType": {
             "$ref": "#/components/schemas/TileType"
+          },
+          "isOpen": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CheckGameQueryResult": {
+        "type": "object",
+        "properties": {
+          "gameExist": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -157,8 +289,8 @@
         "type": "object",
         "properties": {
           "idGame": {
-            "type": "integer",
-            "format": "int32"
+            "type": "string",
+            "nullable": true
           },
           "map": {
             "type": "array",
@@ -172,6 +304,43 @@
           }
         },
         "additionalProperties": false
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
+      },
+      "ScenarioType": {
+        "enum": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
       },
       "TileType": {
         "enum": [

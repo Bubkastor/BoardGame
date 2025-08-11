@@ -8,12 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <OpenApiReference Include="OpenAPIs\swagger.json" ClassName="ApiClient">
-      <SourceUri>https://localhost:7032/swagger/v1/swagger.json</SourceUri>
-    </OpenApiReference>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Blazor.Extensions.Storage" Version="1.0.0" />
     <PackageReference Include="Microsoft.Extensions.ApiDescription.Client" Version="7.0.2">
       <PrivateAssets>all</PrivateAssets>
@@ -35,6 +29,14 @@
     <Content Include="..\.dockerignore">
       <Link>.dockerignore</Link>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <OpenApiReference Include="OpenAPIs\swagger.json" ClassName="ApiClient">
+      <Namespace>BoardGame.Models</Namespace>
+      <SourceUri>http://localhost:3000/swagger/v1/swagger.json</SourceUri>
+      <Options>/GenerateDtoTypes:false</Options>
+    </OpenApiReference>
   </ItemGroup>
 
 </Project>
