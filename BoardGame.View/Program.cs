@@ -1,7 +1,4 @@
-using BoardGame.View.Config;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using BoardGame.Extensions.Options;
+using BoardGame.View.Services;
 
 namespace BoardGame.View;
 
@@ -10,14 +7,20 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+        builder.Configuration
+            .AddJsonFile("appsettings.json")
+            .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true)
+            .AddEnvironmentVariables();
 
         // Add services to the container.
         builder.Services.AddRazorPages();
-        builder.Services.AddServerSideBlazor();
+        builder.Services.AddServerSideBlazor()
+            .AddInteractiveServerComponents();
         builder.Services.AddHttpClient();
+        builder.Services.AddScoped<BrowserStorageService>();
+        
         //builder.Services.AddOptions<SettingsApi>().BindAndValidateDataAnnotationsOnStartRecursively(builder.Configuration.GetSection("Api"));
-
-
+        
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.

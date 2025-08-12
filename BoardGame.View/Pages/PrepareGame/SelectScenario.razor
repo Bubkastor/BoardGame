@@ -3,7 +3,8 @@
 <div>
     <h3>Выберите сценарий</h3>
     <div>
-        <select @bind="SelectedScenarioId" class="form-control">
+        <select class="form-control"
+            @bind="SelectedScenarioId">
             @foreach (var scenario in Scenarios.ScenariosList)
             {
                 <option value="@scenario.Id">@scenario.NameScenario</option>

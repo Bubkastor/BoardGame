@@ -1,7 +1,7 @@
-﻿using Blazor.Extensions.Storage;
-using BoardGame.Models;
+﻿using BoardGame.Models;
 using BoardGame.Models.Repository;
 using BoardGame.Models.Tiles;
+using BoardGame.View.Services;
 using Microsoft.AspNetCore.Components;
 
 namespace BoardGame.View.Pages;
@@ -16,11 +16,11 @@ public partial class Playfield(IHttpClientFactory httpClientFactory)
     public int PlayersCount { get; set; }
     
     public IPlayFieldTilRepository _repo = new PlayFieldTilRepository();
-    private ApiClient _apiClient = new("http://api:3000", httpClientFactory.CreateClient());
+    private ApiClient _apiClient = new("http://localhost:3000", httpClientFactory.CreateClient());
     public IEnumerable<IEnumerable<Cell>>? _maps = null;
     public bool IsLoad { get; private set; } = false;
     [Inject]
-    private LocalStorage LocalStorage { get; set; }
+    protected BrowserStorageService Storage { get; init; }
     private static string ID_GAME_KEY = "ID_GAME_KEY";
 
 
@@ -28,12 +28,18 @@ public partial class Playfield(IHttpClientFactory httpClientFactory)
     {
         try
         {
-            var checkGameResponse = await _apiClient.StatusAsync(IdGame);
-            if (!checkGameResponse.GameExist)
+            var gameExist = false;
+            if (!string.IsNullOrWhiteSpace(IdGame))
+            {
+                var checkGameResponse = await _apiClient.StatusAsync(IdGame);
+                gameExist = checkGameResponse.GameExist;
+            }
+
+            if (!gameExist)
             {
                 var startResult = await _apiClient.StartAsync(ScenarioType, PlayersCount);
                 IdGame = startResult.IdGame.ToString();
-                await LocalStorage.SetItem(ID_GAME_KEY, IdGame);
+                await Storage.SetItem(ID_GAME_KEY, IdGame);
             }
             var gameState = await _apiClient.MapAsync(IdGame);
             if (gameState.Map != null)

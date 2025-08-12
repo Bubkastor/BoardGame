@@ -8,11 +8,20 @@ public class CheckGameQueryHandler(IGameStateRepository gameStateRepository): IR
 {
     public async Task<CheckGameQueryResult> Handle(CheckGameQuery request, CancellationToken cancellationToken)
     {
-        var idGame = int.Parse(request.IdGame);
-        var result = await gameStateRepository.GetGameStateAsync(idGame);
-        return new CheckGameQueryResult()
+        if (int.TryParse(request.IdGame, out int idGame))
         {
-            GameExist = result != null
-        };
+            var result = await gameStateRepository.GetGameStateAsync(idGame);
+            return new CheckGameQueryResult()
+            {
+                GameExist = result != null
+            };
+        }
+        else
+        {
+            return new CheckGameQueryResult()
+            {
+                GameExist = false
+            };
+        }
     }
 }

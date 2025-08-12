@@ -5,7 +5,11 @@ using BoardGame.Persistence.Migrations;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Configuration
+    .AddJsonFile("appsettings.json")
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true)
+    .AddEnvironmentVariables();
+Console.WriteLine(builder.Environment.EnvironmentName);
 builder.Services.AddModelsDependencies();
 builder.Services.AddApplicationDependencies();
 builder.Services.AddControllers();
@@ -34,9 +38,9 @@ if (app.Environment.IsDevelopment())
 }
 else
 {
+    app.UseHttpsRedirection();
 }
 
-    app.UseHttpsRedirection();
 //app.UpdateBoardGameDb(builder.Configuration.GetSection("Persistence:BoardGameDb"));
 app.UseSwagger();
 app.UseSwaggerUI();

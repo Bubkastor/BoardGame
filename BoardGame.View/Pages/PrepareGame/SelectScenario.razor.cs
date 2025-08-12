@@ -7,9 +7,19 @@ namespace BoardGame.View.Pages.PrepareGame;
 
 public partial class SelectScenario: ComponentBase
 {
-    public Scenarios Scenarios { get; set; }
-    public ScenarioTypeName CurrentScenarioType { get; set; }
-    public string SelectedScenarioId { get; set; }
+    private Scenarios Scenarios { get; } = new();
+    private ScenarioTypeName CurrentScenarioType { get; set; }
+    private string _selectedScenarioId;
+    private string SelectedScenarioId {
+        get => _selectedScenarioId;
+        set
+        {
+            _selectedScenarioId = value;
+            ChangeEventArgs selectedEventArgs = new ChangeEventArgs();
+            selectedEventArgs.Value = value;
+            OnChangeSelected(selectedEventArgs);
+        } 
+    }
     [Parameter]
     public required EventCallback SetStep { get; set; }
     [Parameter]
@@ -17,8 +27,8 @@ public partial class SelectScenario: ComponentBase
 
     public SelectScenario()
     {
-        Scenarios = new Scenarios();
         CurrentScenarioType = Scenarios.ScenariosList.First();
+        SelectedScenarioId = CurrentScenarioType.Id;
     }
 
     protected async Task NextScreen()
@@ -26,14 +36,7 @@ public partial class SelectScenario: ComponentBase
         await SetStep.InvokeAsync();
     }
     
-
-    private async Task SelectOption(ScenarioTypeName scenarioType)
-    {
-        CurrentScenarioType = scenarioType;
-        await SetScenario.InvokeAsync(scenarioType.Scenario);
-    }
-
-    private async Task OnScenarioChanged(ChangeEventArgs e)
+    private async Task OnChangeSelected(ChangeEventArgs e)
     {
         var selectedId = e.Value.ToString(); // Получаем Id выбранного сценария
         CurrentScenarioType = Scenarios.ScenariosList.First(s => s.Id == selectedId);

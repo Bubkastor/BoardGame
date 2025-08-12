@@ -4,6 +4,7 @@ namespace BoardGame.View.Config
 {
     public class SettingsApi
     {
+        /// <summary>
         /// Строка настроек подключения к api (required).
         /// </summary>
         [Required]
