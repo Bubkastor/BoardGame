@@ -28,6 +28,7 @@ public partial class Main: ComponentBase
         {
             disableContinue = false;
         }
+        StateHasChanged();
         await base.OnAfterRenderAsync(firstRender);
     }
     

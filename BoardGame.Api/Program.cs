@@ -1,3 +1,4 @@
+using BoardGame.Api;
 using BoardGame.Application;
 using BoardGame.Models;
 using BoardGame.Persistence;
@@ -5,10 +6,19 @@ using BoardGame.Persistence.Migrations;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+var environment = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT")
+                  ?? Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+
+if (!string.IsNullOrEmpty(environment))
+{
+    builder.Environment.EnvironmentName = environment;
+}
+
 builder.Configuration
     .AddJsonFile("appsettings.json")
     .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true)
     .AddEnvironmentVariables();
+
 Console.WriteLine(builder.Environment.EnvironmentName);
 builder.Services.AddModelsDependencies();
 builder.Services.AddApplicationDependencies();

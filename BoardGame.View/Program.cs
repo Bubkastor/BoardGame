@@ -1,3 +1,5 @@
+using BoardGame.Extensions.Options;
+using BoardGame.View.Config;
 using BoardGame.View.Services;
 
 namespace BoardGame.View;
@@ -7,11 +9,12 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+
         builder.Configuration
             .AddJsonFile("appsettings.json")
             .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true)
             .AddEnvironmentVariables();
-
+       
         // Add services to the container.
         builder.Services.AddRazorPages();
         builder.Services.AddServerSideBlazor()
@@ -19,7 +22,7 @@ public class Program
         builder.Services.AddHttpClient();
         builder.Services.AddScoped<BrowserStorageService>();
         
-        //builder.Services.AddOptions<SettingsApi>().BindAndValidateDataAnnotationsOnStartRecursively(builder.Configuration.GetSection("Api"));
+        builder.Services.AddOptions<SettingsApi>().BindAndValidateDataAnnotationsOnStartRecursively(builder.Configuration.GetSection("Api"));
         
         var app = builder.Build();
 
@@ -35,11 +38,8 @@ public class Program
             app.UseHttpsRedirection();
         }
 
-
         app.UseStaticFiles();
-
         app.UseRouting();
-
         app.MapBlazorHub();
         app.MapFallbackToPage("/_Host");
 

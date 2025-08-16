@@ -33,6 +33,7 @@ public partial class SelectScenario: ComponentBase
 
     protected async Task NextScreen()
     {
+        await SetScenario.InvokeAsync(CurrentScenarioType.Scenario);
         await SetStep.InvokeAsync();
     }
     

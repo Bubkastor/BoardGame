@@ -1,13 +1,16 @@
 ﻿using BoardGame.Models;
 using BoardGame.Models.Repository;
 using BoardGame.Models.Tiles;
+using BoardGame.View.Config;
 using BoardGame.View.Services;
 using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Options;
 
 namespace BoardGame.View.Pages;
 public partial class Playfield(IHttpClientFactory httpClientFactory)
 {
-    
+    [Inject]
+    public IOptionsMonitor<SettingsApi> SettingsApi { get; set; } 
     [Parameter]
     public string IdGame { get; set; }
     [Parameter]
@@ -16,7 +19,7 @@ public partial class Playfield(IHttpClientFactory httpClientFactory)
     public int PlayersCount { get; set; }
     
     public IPlayFieldTilRepository _repo = new PlayFieldTilRepository();
-    private ApiClient _apiClient = new("http://localhost:3000", httpClientFactory.CreateClient());
+    private ApiClient _apiClient;
     public IEnumerable<IEnumerable<Cell>>? _maps = null;
     public bool IsLoad { get; private set; } = false;
     [Inject]
@@ -28,6 +31,10 @@ public partial class Playfield(IHttpClientFactory httpClientFactory)
     {
         try
         {
+            Console.WriteLine("=========");
+            Console.WriteLine(SettingsApi.CurrentValue.ConnectionString);
+            Console.WriteLine("=========");
+            _apiClient =  new(SettingsApi.CurrentValue.ConnectionString, httpClientFactory.CreateClient());
             var gameExist = false;
             if (!string.IsNullOrWhiteSpace(IdGame))
             {

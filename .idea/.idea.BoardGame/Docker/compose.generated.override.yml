@@ -16,7 +16,6 @@ services:
     volumes:
     - "/Users/albert/Documents/src/BoardGame/BoardGame.Api:/app-1:rw"
     - "/Users/albert/Documents/src/BoardGame:/src:rw"
-    - "/Users/albert/.nuget/packages:/home/app/.nuget/packages"
     working_dir: "/app-1"
   view:
     build:
@@ -35,5 +34,5 @@ services:
     volumes:
     - "/Users/albert/Documents/src/BoardGame/BoardGame.View:/app-1:rw"
     - "/Users/albert/Documents/src/BoardGame:/src:rw"
-    - "/Users/albert/.nuget/packages:/home/app/.nuget/packages"
+    - "/Users/albert/.nuget/packages:/root/.nuget/packages"
     working_dir: "/app-1"
