@@ -4,6 +4,10 @@ using Microsoft.AspNetCore.Components;
 
 namespace BoardGame.View.Pages.PrepareGame;
 
+
+//todo добавить взаимоисключающий список персонажей
+// private IEnumerable<string> AvailableItems1 => 
+// AllItems.Except(new[] { SelectedItem2 }.Where(x => !string.IsNullOrEmpty(x)));
 public partial class SelectCharacter : ComponentBase
 {
     [Parameter]
@@ -17,9 +21,6 @@ public partial class SelectCharacter : ComponentBase
 
     protected override async Task OnInitializedAsync()
     {
-        Console.WriteLine("==========");
-        Console.WriteLine(PlayerCount);
-        Console.WriteLine("==========");
         playerViews = new List<PlayerView>();
         for (int i = 0; i < PlayerCount; i++)
         {
