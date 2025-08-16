@@ -16,6 +16,7 @@ public enum PlayerType
     /// Гуль
     /// </summary>
     Ghoul = 3,
+    
     /// <summary>
     /// Супермутант
     /// </summary>

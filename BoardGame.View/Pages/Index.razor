@@ -18,10 +18,10 @@ else
             <SelectScenario SetStep="() => SetStep(PrepareStep.PlayerCount)" SetScenario="(arg) => SetScenarioType(arg)"></SelectScenario>
             break;
         case PrepareStep.PlayerCount:
-            <SelectPlayerCount SetStep="() => SetStep(PrepareStep.Character)" SetPLayersCount="(arg) => SetPlayersCount(arg)"></SelectPlayerCount>
+            <SelectPlayerCount SetStep="() => SetStep(PrepareStep.Character)" SetPlayersCount="(arg) => SetPlayersCount(arg)"></SelectPlayerCount>
             break;
         case PrepareStep.Character:
-            <SelectCharacter SetStep="() => Finish()"></SelectCharacter>
+            <SelectCharacter PlayerCount="PlayersCount" SetStep="() => Finish()"></SelectCharacter>
             break;
         default:
             break;

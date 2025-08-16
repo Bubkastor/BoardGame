@@ -9,8 +9,8 @@ public partial class SelectScenario: ComponentBase
 {
     private Scenarios Scenarios { get; } = new();
     private ScenarioTypeName CurrentScenarioType { get; set; }
-    private string _selectedScenarioId;
-    private string SelectedScenarioId {
+    private int _selectedScenarioId;
+    private int SelectedScenarioId {
         get => _selectedScenarioId;
         set
         {
@@ -28,7 +28,7 @@ public partial class SelectScenario: ComponentBase
     public SelectScenario()
     {
         CurrentScenarioType = Scenarios.ScenariosList.First();
-        SelectedScenarioId = CurrentScenarioType.Id;
+        SelectedScenarioId = CurrentScenarioType.Value;
     }
 
     protected async Task NextScreen()
@@ -39,8 +39,8 @@ public partial class SelectScenario: ComponentBase
     
     private async Task OnChangeSelected(ChangeEventArgs e)
     {
-        var selectedId = e.Value.ToString(); // Получаем Id выбранного сценария
-        CurrentScenarioType = Scenarios.ScenariosList.First(s => s.Id == selectedId);
+        var selectedId = (int)e.Value; // Получаем Id выбранного сценария
+        CurrentScenarioType = Scenarios.ScenariosList.First(s => s.Value == selectedId);
         Console.WriteLine($"Выбран сценарий: {CurrentScenarioType.NameScenario}");
         //CurrentScenarioType = scenarioType;
         await SetScenario.InvokeAsync(CurrentScenarioType.Scenario);

@@ -2,9 +2,9 @@ namespace BoardGame.Models.View;
 
 public record ScenarioTypeName(ScenarioType scenario, string nameScenario)
 {
-     public string Id
+     public int Value
      {
-          get => NameScenario;
+          get => (int)Scenario;
      }
      public ScenarioType Scenario { get; init; } = scenario;
      public string NameScenario { get; init; } = nameScenario;

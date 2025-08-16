@@ -1,6 +1,19 @@
 <h3>SelectCharacter</h3>
+@foreach (var player in playerViews)
+{
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Player</h5>
+            <input type="Text" placeholder="Name" @bind="player.Name" />
+            <select class="form-control"
+                    @bind="player.Type">
+                @foreach (var playerType in players.PlayersList)
+                {
+                    <option value="@playerType.Player">@playerType.NamePlayerType</option>
+                }
+            </select>
+        </div>
+    </div>
+}
 
 <button @onclick="async() => await NextScreen()">Next</button>
-@code {
-    
-}

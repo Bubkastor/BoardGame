@@ -7,7 +7,7 @@
             @bind="SelectedScenarioId">
             @foreach (var scenario in Scenarios.ScenariosList)
             {
-                <option value="@scenario.Id">@scenario.NameScenario</option>
+                <option value="@scenario.Value">@scenario.NameScenario</option>
             }
         </select>
     </div>

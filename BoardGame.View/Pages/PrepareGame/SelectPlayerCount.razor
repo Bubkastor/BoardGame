@@ -4,7 +4,7 @@
         Количество игроков
     </h3>
     <div>
-        <input type="range" min="1" max="4"/>
+        <input @bind="PlayerCount" type="range" min="1" max="4"/>
     </div>
 </div>
 <button @onclick="async() => await NextScreen()">Next</button>
