@@ -1,0 +1,23 @@
+#!/bin/zsh
+
+# Получаем внешний IP (таймаут 3 секунды)
+ip=$(timeout 3 curl -4 -s icanhazip.com)
+
+# Генерируем приватный ключ
+openssl genrsa -out secret.key 2048
+
+# Создаём запрос на сертификат (CSR) с указанными параметрами
+openssl req -key secret.key -new -out cert.csr -nodes \
+    -subj "/C=AU/ST=StateName/L=CityName/O=CompanyName/OU=CompanySectionName/CN=$ip" \
+    -addext "subjectAltName=DNS:$ip,DNS:*.$ip,IP:$ip"
+
+# Подписываем CSR и получаем самоподписанный сертификат на 10 лет
+openssl x509 -signkey secret.key -in cert.csr -req -days 3650 -out cert.crt
+
+# Выводим пути к созданным файлам с цветовым выделением
+place=$(pwd)
+print -P "%F{green}Путь к файлу публичного ключа сертификата панели:%f"
+print -P "%F{red}$place/cert.crt%f"
+
+print -P "%F{green}Путь к файлу приватного ключа сертификата панели:%f"
+print -P "%F{red}$place/secret.key%f"
